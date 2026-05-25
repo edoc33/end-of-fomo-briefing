@@ -1,5 +1,5 @@
 /* =================================================================
-   The End of FOMO — Landing Page Styles
+   The End of FOMO · Landing Page Styles
    Layered on top of ../design-tokens.css (Visualping design system).
    Phases 1 + 2: foundation + cover.
    ================================================================= */
@@ -13,7 +13,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Selection — newsroom feel */
+/* Selection · newsroom feel */
 ::selection {
   background: var(--vp-blue-500);
   color: #fff;
@@ -72,7 +72,7 @@ body {
 }
 
 /* ===================================================================
-   SECTION 1 — COVER
+   SECTION 1 · COVER
    Full-bleed dark hero. Big editorial type. Parallax clouds.
    =================================================================== */
 .cover {
@@ -162,7 +162,7 @@ body {
   100% { box-shadow: 0 0 0 0 rgba(24,130,255, 0); }
 }
 
-/* Hero title — clamp scales from mobile 44px up to desktop 132px */
+/* Hero title · clamp scales from mobile 44px up to desktop 132px */
 .cover__title {
   margin: 0 0 clamp(20px, 3vh, 32px);
   font-size: clamp(2.75rem, 11vw, 8.25rem);
@@ -291,7 +291,7 @@ body {
 }
 
 /* ===================================================================
-   PLACEHOLDER SECTIONS (Phases 3–6 — will be replaced)
+   PLACEHOLDER SECTIONS (Phases 3–6 · will be replaced)
    =================================================================== */
 .placeholder {
   max-width: 880px;

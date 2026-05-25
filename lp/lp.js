@@ -1,4 +1,4 @@
-/* The End of FOMO — landing page motion
+/* The End of FOMO · landing page motion
  * Phases 1 + 2: nav pin behavior, parallax clouds, stat count-ups.
  * Phases 3+ will mount GSAP ScrollTrigger on top of this baseline.
  */
@@ -78,7 +78,7 @@
     const format = el.getAttribute('data-format') || 'plain';
     const suffix = el.getAttribute('data-suffix') || '';
 
-    // Adaptive duration — bigger targets get more frames so the
+    // Adaptive duration · bigger targets get more frames so the
     // last few digits look intentional, not janky.
     const dur =
       target <= 100 ? 900 : target <= 10000 ? 1400 : target <= 200000 ? 1800 : 2200;
