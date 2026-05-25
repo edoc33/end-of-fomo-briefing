@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000024">
+<title>The End of FOMO — Information Agents Press Briefing</title>
+<meta name="description" content="Google named information agents at I/O 2026. The architecture has been working in the background for nine years. A press briefing on the rise of agentic search and the page monitoring agents underneath it.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Visualping">
+<meta property="og:title" content="The End of FOMO — Information Agents Press Briefing">
+<meta property="og:description" content="Google named the category. Visualping built the substrate underneath. A press briefing on agentic search and page monitoring agents.">
+<meta property="og:url" content="https://edoc33.github.io/end-of-fomo-briefing/lp/">
+<meta property="og:image" content="https://edoc33.github.io/end-of-fomo-briefing/assets/liz-reid-keynote.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@visualping">
+<meta name="twitter:title" content="The End of FOMO — Information Agents Press Briefing">
+<meta name="twitter:description" content="Google named the category at I/O 2026. Visualping built the substrate underneath.">
+<meta name="twitter:image" content="https://edoc33.github.io/end-of-fomo-briefing/assets/liz-reid-keynote.png">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://edoc33.github.io/end-of-fomo-briefing/lp/">
+
+<!-- Design tokens (Visualping monorepo source of truth) -->
+<link rel="stylesheet" href="../design-tokens.css">
+<link rel="stylesheet" href="lp-styles.css">
+
+<!-- Preload hero typography -->
+<link rel="preload" href="../fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+<!-- Analytics placeholder — wire Plausible domain in Phase 6 -->
+<!-- <script defer data-domain="fomo.visualping.io" src="https://plausible.io/js/script.js"></script> -->
+
+<!-- GSAP — only loaded for scroll-driven sections after Phase 3 -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+<!-- THIN TOP NAV ----------------------------------------------------------- -->
+<header class="lp-nav" data-nav>
+  <a class="lp-nav__brand" href="/" aria-label="Visualping">
+    <img src="../assets/visualping-logo-white.svg" alt="" height="22">
+  </a>
+  <nav class="lp-nav__links" aria-label="Sections">
+    <a href="#lineage">Lineage</a>
+    <a href="#architecture">Architecture</a>
+    <a href="#keynote">Keynote</a>
+    <a href="#voices">Voices</a>
+    <a class="lp-nav__cta" href="https://visualping.io/sign-up/?utm_source=fomo&amp;utm_campaign=press-briefing">Try Visualping</a>
+  </nav>
+</header>
+
+<!-- ============================================================ -->
+<!-- SECTION 1 — COVER                                            -->
+<!-- ============================================================ -->
+<section class="cover" id="cover" data-section="cover">
+  <!-- Parallax clouds — purely decorative -->
+  <img class="cover__cloud cover__cloud--left"  src="../assets/clouds-left.svg"  alt="" aria-hidden="true" data-parallax="-0.18">
+  <img class="cover__cloud cover__cloud--right" src="../assets/clouds-right.svg" alt="" aria-hidden="true" data-parallax="-0.12">
+
+  <!-- Subtle scanlines + grain to suggest "newsroom broadcast feed" -->
+  <div class="cover__grain" aria-hidden="true"></div>
+  <div class="cover__vignette" aria-hidden="true"></div>
+
+  <div class="cover__inner">
+    <p class="cover__eyebrow">
+      <span class="cover__dot" aria-hidden="true"></span>
+      Press briefing &middot; May 21, 2026
+    </p>
+
+    <h1 class="cover__title">
+      The End of <em>FOMO</em>.
+    </h1>
+
+    <p class="cover__lead">
+      Google named the category at I/O 2026.
+      <span>Visualping has been running the substrate underneath it since 2017.</span>
+    </p>
+
+    <!-- Big numbers row -->
+    <div class="cover__stats" role="list">
+      <div class="cover__stat" role="listitem">
+        <span class="cover__stat-num" data-countup="23" data-suffix="">23</span>
+        <span class="cover__stat-label">years from Google Alerts<br>to Google Information Agents</span>
+      </div>
+      <div class="cover__stat" role="listitem">
+        <span class="cover__stat-num" data-countup="1874911" data-suffix="" data-format="comma">1,874,911</span>
+        <span class="cover__stat-label">active page monitors<br>in a same-day snapshot</span>
+      </div>
+      <div class="cover__stat" role="listitem">
+        <span class="cover__stat-num" data-countup="52452" data-suffix="" data-format="comma">52,452</span>
+        <span class="cover__stat-label">running every five minutes<br>or faster</span>
+      </div>
+    </div>
+
+    <div class="cover__pullquote" aria-label="Customer voice">
+      <p>
+        &ldquo;When we&apos;ve done this with ChatGPT, it doesn&apos;t not give us answers.
+        It will give us a change of changes. But when we go and manually look it up, it&apos;s wrong.&rdquo;
+      </p>
+      <cite>B2B Manufacturing prospect, May 2026</cite>
+    </div>
+  </div>
+
+  <a class="cover__cue" href="#lineage" aria-label="Continue to the lineage section">
+    <span>Continue</span>
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+      <path d="M12 4v14M5 12l7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 2 — LINEAGE  (Phase 3 — placeholder for now)         -->
+<!-- ============================================================ -->
+<section class="lineage" id="lineage" data-section="lineage" data-coming-soon>
+  <div class="placeholder">
+    <p class="placeholder__eyebrow">Phase 3 next</p>
+    <h2>Lineage — 23 years, 5 named moments</h2>
+    <p class="placeholder__lead">
+      Horizontal scroll timeline coming next: Google Alerts (2003) →
+      Visualping (2017) → ChatGPT Pulse (Sept 2025) → Exa $250M (May 2026) →
+      Google Information Agents (Summer 2026).
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 3 — ARCHITECTURE  (Phase 4 — placeholder)            -->
+<!-- ============================================================ -->
+<section class="architecture" id="architecture" data-coming-soon>
+  <div class="placeholder">
+    <p class="placeholder__eyebrow">Phase 4 next</p>
+    <h2>Two architectures, side by side</h2>
+    <p class="placeholder__lead">
+      Sticky split-screen: open-web discovery on the left, page-precision
+      monitoring on the right. Both animate independently as you scroll.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 4 — KEYNOTE  (Phase 5 — placeholder)                 -->
+<!-- ============================================================ -->
+<section class="keynote" id="keynote" data-coming-soon>
+  <div class="placeholder">
+    <p class="placeholder__eyebrow">Phase 5 next</p>
+    <h2>Liz Reid named it on stage</h2>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 5 — CUSTOMER VOICE  (Phase 5)                        -->
+<!-- ============================================================ -->
+<section class="voices" id="voices" data-coming-soon>
+  <div class="placeholder">
+    <p class="placeholder__eyebrow">Phase 5 next</p>
+    <h2>What customers said before Google named it</h2>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 6 — CTA  (Phase 6 — placeholder)                     -->
+<!-- ============================================================ -->
+<section class="cta" id="cta" data-coming-soon>
+  <div class="placeholder">
+    <p class="placeholder__eyebrow">Phase 6 next</p>
+    <h2>Try the page-monitor side of the architecture</h2>
+  </div>
+</section>
+
+<footer class="lp-foot">
+  <p>
+    Visualping &middot; The page-monitoring substrate for information agents &middot;
+    <a href="/">View the original press deck</a>
+  </p>
+</footer>
+
+<script src="lp.js" defer></script>
+</body>
+</html>
