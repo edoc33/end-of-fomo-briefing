@@ -329,7 +329,7 @@ body {
 }
 
 /* ===================================================================
-   SECTION 2 · LINEAGE — horizontal scroll timeline
+   SECTION 2 · LINEAGE · horizontal scroll timeline
    GSAP pins the section; vertical scroll translates the track horizontally.
    =================================================================== */
 .lineage {
