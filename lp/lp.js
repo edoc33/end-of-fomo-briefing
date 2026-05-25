@@ -90,9 +90,9 @@
       const elapsed = now - start;
       const progress = Math.min(1, elapsed / dur);
       const v = Math.round(target * ease(progress));
-      el.textContent = (format === 'comma' ? v.toLocaleString('en-US') : String(v)) + suffix;
+      el.textContent = prefix + (format === 'comma' ? v.toLocaleString('en-US') : String(v)) + suffix;
       if (progress < 1) requestAnimationFrame(tick);
-      else el.textContent = (format === 'comma' ? target.toLocaleString('en-US') : String(target)) + suffix;
+      else el.textContent = prefix + (format === 'comma' ? target.toLocaleString('en-US') : String(target)) + suffix;
     }
     requestAnimationFrame(tick);
   }
@@ -101,6 +101,7 @@
     const target = parseInt(el.getAttribute('data-countup'), 10);
     const format = el.getAttribute('data-format') || 'plain';
     const suffix = el.getAttribute('data-suffix') || '';
-    return (format === 'comma' ? target.toLocaleString('en-US') : String(target)) + suffix;
+    const prefix = el.getAttribute('data-prefix') || '';
+    return prefix + (format === 'comma' ? target.toLocaleString('en-US') : String(target)) + suffix;
   }
 })();
