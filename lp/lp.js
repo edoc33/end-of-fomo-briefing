@@ -105,3 +105,55 @@
     return prefix + (format === 'comma' ? target.toLocaleString('en-US') : String(target)) + suffix;
   }
 })();
+
+/* ===================================================================
+   Phase 3 · Lineage horizontal scroll
+   Pins the lineage section and translates the track X based on scroll.
+   Activates only when GSAP + ScrollTrigger are loaded, viewport is wide,
+   and reduced motion is not requested.
+   =================================================================== */
+window.addEventListener('load', function () {
+  const reduced =
+    window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const narrow = window.matchMedia('(max-width: 720px)').matches;
+  if (reduced || narrow) return;
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const track = document.querySelector('[data-lineage-track]');
+  const section = document.querySelector('.lineage');
+  const dots = document.querySelectorAll('.lineage__progress li');
+  if (!track || !section || !dots.length) return;
+
+  // Total horizontal distance the track must travel.
+  const totalScroll = function () {
+    return Math.max(0, track.scrollWidth - window.innerWidth + 80);
+  };
+
+  gsap.to(track, {
+    x: function () { return -totalScroll(); },
+    ease: 'none',
+    scrollTrigger: {
+      trigger: section,
+      start: 'top top',
+      end: function () { return '+=' + totalScroll(); },
+      scrub: 0.5,
+      pin: true,
+      anticipatePin: 1,
+      invalidateOnRefresh: true,
+      onUpdate: function (self) {
+        const idx = Math.min(
+          dots.length - 1,
+          Math.floor(self.progress * dots.length)
+        );
+        dots.forEach(function (d, i) {
+          if (i === idx) d.setAttribute('aria-current', 'true');
+          else d.removeAttribute('aria-current');
+        });
+      }
+    }
+  });
+
+  window.addEventListener('resize', function () { ScrollTrigger.refresh(); });
+});

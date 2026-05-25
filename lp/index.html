@@ -118,17 +118,68 @@
 </section>
 
 <!-- ============================================================ -->
-<!-- SECTION 2 · LINEAGE  (Phase 3 · placeholder for now)         -->
+<!-- SECTION 2 · LINEAGE — horizontal scroll, 5 vintage cards     -->
 <!-- ============================================================ -->
-<section class="lineage" id="lineage" data-section="lineage" data-coming-soon>
-  <div class="placeholder">
-    <p class="placeholder__eyebrow">Phase 3 next</p>
-    <h2>Lineage · 23 years, 5 named moments</h2>
-    <p class="placeholder__lead">
-      Horizontal scroll timeline coming next: Google Alerts (2003) →
-      Visualping (2017) → ChatGPT Pulse (Sept 2025) → Exa $250M (May 2026) →
-      Google Information Agents (Summer 2026).
-    </p>
+<section class="lineage" id="lineage" aria-label="The 23-year lineage of the page-monitoring category">
+  <div class="lineage__sticky">
+    <header class="lineage__head">
+      <p class="lineage__eyebrow"><span class="lineage__dot" aria-hidden="true"></span>Lineage &middot; five named moments, 23 years</p>
+      <h2 class="lineage__title">The category formed in plain sight.</h2>
+      <p class="lineage__lead">A timeline of when the work of watching what changes became visible, and what each step left unnamed.</p>
+      <ol class="lineage__progress" aria-label="Timeline progress">
+        <li data-step="1" aria-current="true"></li>
+        <li data-step="2"></li>
+        <li data-step="3"></li>
+        <li data-step="4"></li>
+        <li data-step="5"></li>
+      </ol>
+    </header>
+
+    <div class="lineage__viewport">
+      <div class="lineage__track" data-lineage-track>
+
+        <article class="lineage__card" data-card="1">
+          <div class="lineage__yearbadge">May 2003</div>
+          <h3 class="lineage__cardtitle">Google Alerts</h3>
+          <p class="lineage__dek">The largest crawler on earth tells you when something new appears. Free, integrated into Search, keyword-driven.</p>
+          <p class="lineage__take">The category exists. It has no consumer name yet.</p>
+          <a class="lineage__cite" href="https://www.google.com/alerts" rel="noopener">google.com / alerts</a>
+        </article>
+
+        <article class="lineage__card" data-card="2">
+          <div class="lineage__yearbadge">2017</div>
+          <h3 class="lineage__cardtitle">Visualping</h3>
+          <p class="lineage__dek">Per-page visual diffing opens to the public. JavaScript-rendered pages become first-class citizens of the monitoring stack.</p>
+          <p class="lineage__take">The precision layer ships. Still no consumer name.</p>
+          <a class="lineage__cite" href="https://visualping.io/" rel="noopener">visualping.io</a>
+        </article>
+
+        <article class="lineage__card" data-card="3">
+          <div class="lineage__yearbadge">September 2025</div>
+          <h3 class="lineage__cardtitle">ChatGPT Pulse</h3>
+          <p class="lineage__dek">OpenAI ships daily proactive briefings for Pro subscribers at $200 a month. A consumer AI feature whose job is to deliver information without being asked.</p>
+          <p class="lineage__take">The behavior gets traction. The category still has no name.</p>
+          <a class="lineage__cite" href="https://openai.com/index/introducing-chatgpt-pulse/" rel="noopener">openai.com / pulse</a>
+        </article>
+
+        <article class="lineage__card" data-card="4">
+          <div class="lineage__yearbadge">May 2026</div>
+          <h3 class="lineage__cardtitle">Exa raises $250M</h3>
+          <p class="lineage__dek">A $2.2 billion valuation, led by Andreessen Horowitz. Developer API for recurring web searches at the open-web layer.</p>
+          <p class="lineage__take">Capital validates the layer. Still no consumer-named category.</p>
+          <a class="lineage__cite" href="https://exa.ai/blog/announcing-series-c" rel="noopener">exa.ai / series-c</a>
+        </article>
+
+        <article class="lineage__card" data-card="5">
+          <div class="lineage__yearbadge">Summer 2026</div>
+          <h3 class="lineage__cardtitle">Google Information Agents</h3>
+          <p class="lineage__dek">I/O 2026: Google ships persistent AI agents inside Search, rolling out to AI Pro and Ultra subscribers at $20 to $200 per month.</p>
+          <p class="lineage__take">23 years in, the category gets a consumer name.</p>
+          <a class="lineage__cite" href="https://blog.google/products-and-platforms/products/search/search-io-2026/" rel="noopener">blog.google / I/O 2026</a>
+        </article>
+
+      </div>
+    </div>
   </div>
 </section>
 
