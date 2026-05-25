@@ -157,3 +157,97 @@ window.addEventListener('load', function () {
 
   window.addEventListener('resize', function () { ScrollTrigger.refresh(); });
 });
+
+/* ===================================================================
+   Phase 4 · Architecture sticky split-screen
+   Pins the wrapper, advances beats 01..04 on both columns as scroll progresses.
+   =================================================================== */
+window.addEventListener('load', function () {
+  const reduced =
+    window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const narrow = window.matchMedia('(max-width: 900px)').matches;
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+  const wrap = document.querySelector('[data-arch-wrap]');
+  const section = document.querySelector('.architecture');
+  const beatLists = document.querySelectorAll('[data-beats]');
+  if (!wrap || !section || !beatLists.length) return;
+
+  if (reduced || narrow) {
+    // Just reveal all beats immediately
+    beatLists.forEach(function (list) {
+      list.querySelectorAll('[data-beat]').forEach(function (li) {
+        li.setAttribute('data-active', '');
+      });
+    });
+    return;
+  }
+
+  function setBeats(activeUpTo) {
+    beatLists.forEach(function (list) {
+      list.querySelectorAll('[data-beat]').forEach(function (li) {
+        const bn = parseInt(li.getAttribute('data-beat'), 10);
+        if (bn <= activeUpTo) li.setAttribute('data-active', '');
+        else li.removeAttribute('data-active');
+      });
+    });
+  }
+
+  setBeats(1);
+  ScrollTrigger.create({
+    trigger: section,
+    start: 'top top',
+    end: '+=240%',
+    pin: wrap,
+    scrub: 0.4,
+    anticipatePin: 1,
+    invalidateOnRefresh: true,
+    onUpdate: function (self) {
+      const beats = Math.min(4, Math.max(1, Math.ceil(self.progress * 4)));
+      setBeats(beats);
+    }
+  });
+});
+
+/* ===================================================================
+   Phase 5 · Voices stagger reveal
+   IntersectionObserver-driven · no GSAP needed for this one.
+   =================================================================== */
+(function () {
+  const cards = document.querySelectorAll('.voices__card');
+  if (!cards.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    cards.forEach(function (c) { c.setAttribute('data-active', ''); });
+    return;
+  }
+
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      const card = entry.target;
+      const idx = parseInt(card.getAttribute('data-voice'), 10) || 1;
+      setTimeout(function () {
+        card.setAttribute('data-active', '');
+      }, (idx - 1) * 180);
+      observer.unobserve(card);
+    });
+  }, { threshold: 0.25 });
+
+  cards.forEach(function (c) { observer.observe(c); });
+})();
+
+/* ===================================================================
+   Phase 6 · CTA form · light client-side normalization before submit
+   Form posts a GET to visualping.io/sign-up with utm_* + email + url.
+   =================================================================== */
+(function () {
+  const form = document.querySelector('[data-cta-form]');
+  if (!form) return;
+  form.addEventListener('submit', function () {
+    const urlInput = form.querySelector('input[name="url"]');
+    if (urlInput && urlInput.value && !/^https?:\/\//i.test(urlInput.value)) {
+      urlInput.value = 'https://' + urlInput.value;
+    }
+  });
+})();

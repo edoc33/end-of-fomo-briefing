@@ -184,46 +184,170 @@
 </section>
 
 <!-- ============================================================ -->
-<!-- SECTION 3 · ARCHITECTURE  (Phase 4 · placeholder)            -->
+<!-- SECTION 3 · ARCHITECTURE                                     -->
 <!-- ============================================================ -->
-<section class="architecture" id="architecture" data-coming-soon>
-  <div class="placeholder">
-    <p class="placeholder__eyebrow">Phase 4 next</p>
-    <h2>Two architectures, side by side</h2>
-    <p class="placeholder__lead">
-      Sticky split-screen: open-web discovery on the left, page-precision
-      monitoring on the right. Both animate independently as you scroll.
+<section class="architecture" id="architecture" aria-label="Two architectures of agentic search">
+  <div class="architecture__wrapper" data-arch-wrap>
+    <header class="architecture__head">
+      <p class="architecture__eyebrow"><span class="architecture__dot" aria-hidden="true"></span>Two architectures, side by side</p>
+      <h2 class="architecture__title">Discovery and precision do different work.</h2>
+      <p class="architecture__lead">The press told one half of the story. Both halves are required.</p>
+    </header>
+
+    <div class="architecture__cols">
+      <article class="architecture__col" data-arch-col="open-web">
+        <header class="architecture__colhdr">
+          <p class="architecture__colhead">Open-web agents</p>
+          <p class="architecture__colsub">Google Information Agents, ChatGPT Pulse, Exa, Perplexity</p>
+        </header>
+        <ol class="architecture__beats" data-beats>
+          <li data-beat="1">
+            <span class="architecture__beatnum">01</span>
+            <div>
+              <h4>Ask a topic</h4>
+              <p>Hand it a question or a theme. "Tickets for the Reds on Saturday."</p>
+            </div>
+          </li>
+          <li data-beat="2">
+            <span class="architecture__beatnum">02</span>
+            <div>
+              <h4>Scan the open web</h4>
+              <p>Fan out across millions of pages. Sampling, not surveillance.</p>
+            </div>
+          </li>
+          <li data-beat="3">
+            <span class="architecture__beatnum">03</span>
+            <div>
+              <h4>Synthesize</h4>
+              <p>Compress what was found into a brief. Some of it is right.</p>
+            </div>
+          </li>
+          <li data-beat="4">
+            <span class="architecture__beatnum">04</span>
+            <div>
+              <h4>Notify</h4>
+              <p>Push notification or morning digest. Wide and shallow.</p>
+            </div>
+          </li>
+        </ol>
+        <p class="architecture__colfoot">Input: a topic &middot; Freshness: broad &middot; Verification: model-dependent</p>
+      </article>
+
+      <article class="architecture__col architecture__col--accent" data-arch-col="precision">
+        <header class="architecture__colhdr">
+          <p class="architecture__colhead">Page-monitoring agents</p>
+          <p class="architecture__colsub">Visualping, Distill, Wachete, Fluxguard</p>
+        </header>
+        <ol class="architecture__beats" data-beats>
+          <li data-beat="1">
+            <span class="architecture__beatnum">01</span>
+            <div>
+              <h4>Set a URL</h4>
+              <p>Hand it a specific page. "Watch ticketmaster.com/event/12345."</p>
+            </div>
+          </li>
+          <li data-beat="2">
+            <span class="architecture__beatnum">02</span>
+            <div>
+              <h4>Check on schedule</h4>
+              <p>Every five minutes, hour, or day. The cadence you set, sustained for years.</p>
+            </div>
+          </li>
+          <li data-beat="3">
+            <span class="architecture__beatnum">03</span>
+            <div>
+              <h4>Diff captured</h4>
+              <p>Visual snapshot, structural diff, AI importance classification. Timestamped.</p>
+            </div>
+          </li>
+          <li data-beat="4">
+            <span class="architecture__beatnum">04</span>
+            <div>
+              <h4>Verified alert</h4>
+              <p>An auditable record of what changed and when. Narrow and deep.</p>
+            </div>
+          </li>
+        </ol>
+        <p class="architecture__colfoot">Input: a URL &middot; Freshness: tight &middot; Verification: source-of-truth</p>
+      </article>
+    </div>
+
+    <p class="architecture__takeaway">
+      Discovery agents find the page. Page-monitoring agents verify the page. Both feed the next agent. Both are real categories.
     </p>
   </div>
 </section>
 
 <!-- ============================================================ -->
-<!-- SECTION 4 · KEYNOTE  (Phase 5 · placeholder)                 -->
+<!-- SECTION 4 · KEYNOTE                                          -->
 <!-- ============================================================ -->
-<section class="keynote" id="keynote" data-coming-soon>
-  <div class="placeholder">
-    <p class="placeholder__eyebrow">Phase 5 next</p>
-    <h2>Liz Reid named it on stage</h2>
+<section class="keynote" id="keynote" aria-label="The keynote moment">
+  <figure class="keynote__media">
+    <img src="../assets/liz-reid-keynote.png" alt="Liz Reid on the Google I/O 2026 stage announcing information agents" class="keynote__photo" loading="lazy">
+    <div class="keynote__scrim" aria-hidden="true"></div>
+    <figcaption class="keynote__caption">
+      <p class="keynote__eyebrow">May 19, 2026 &middot; Shoreline Amphitheatre</p>
+      <blockquote class="keynote__quote">
+        <p>You can put information agents to work for you this summer.</p>
+        <cite>Liz Reid, Google VP of Search &middot; I/O 2026 keynote</cite>
+      </blockquote>
+    </figcaption>
+  </figure>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 5 · CUSTOMER VOICES                                  -->
+<!-- ============================================================ -->
+<section class="voices" id="voices" aria-label="Customer voices that named it first">
+  <div class="voices__inner">
+    <p class="voices__eyebrow"><span class="voices__dot" aria-hidden="true"></span>What customers said before Google did</p>
+    <h2 class="voices__title">The category was forming in sales calls.</h2>
+    <p class="voices__lead">Three conversations from the first half of 2026, before Google gave the category a name.</p>
+    <ol class="voices__list" data-voices-list>
+      <li class="voices__card" data-voice="1">
+        <blockquote>
+          <p>"When we've done this with ChatGPT, it doesn't not give us answers. It will give us a change of changes. But when we go and manually look it up, it's wrong."</p>
+          <cite>B2B Manufacturing prospect &middot; May 2026</cite>
+        </blockquote>
+      </li>
+      <li class="voices__card" data-voice="2">
+        <blockquote>
+          <p>"It's quite a varied range of laws we track. A cumbersome exercise trying to monitor everything. We need a tool that can tell us when something changes."</p>
+          <cite>Compliance prospect &middot; March 2026</cite>
+        </blockquote>
+      </li>
+      <li class="voices__card" data-voice="3">
+        <blockquote>
+          <p>"We've got multiple project managers all spending time looking at these sites when we could have one person doing that."</p>
+          <cite>Engineering services prospect &middot; March 2026</cite>
+        </blockquote>
+      </li>
+    </ol>
   </div>
 </section>
 
 <!-- ============================================================ -->
-<!-- SECTION 5 · CUSTOMER VOICE  (Phase 5)                        -->
+<!-- SECTION 6 · CTA                                              -->
 <!-- ============================================================ -->
-<section class="voices" id="voices" data-coming-soon>
-  <div class="placeholder">
-    <p class="placeholder__eyebrow">Phase 5 next</p>
-    <h2>What customers said before Google named it</h2>
-  </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- SECTION 6 · CTA  (Phase 6 · placeholder)                     -->
-<!-- ============================================================ -->
-<section class="cta" id="cta" data-coming-soon>
-  <div class="placeholder">
-    <p class="placeholder__eyebrow">Phase 6 next</p>
-    <h2>Try the page-monitor side of the architecture</h2>
+<section class="cta" id="cta" aria-label="Set a page monitor">
+  <div class="cta__inner">
+    <p class="cta__eyebrow"><span class="cta__dot" aria-hidden="true"></span>Try the page-monitoring side</p>
+    <h2 class="cta__title">Set a monitor on a page that matters to you.</h2>
+    <p class="cta__lead">Free plan. No credit card. Two-minute setup. Powered by Visualping, the largest page-monitoring agent in the category.</p>
+    <form class="cta__form" action="https://visualping.io/sign-up/" method="get" data-cta-form>
+      <input type="hidden" name="utm_source" value="fomo">
+      <input type="hidden" name="utm_campaign" value="press-briefing">
+      <label class="cta__field">
+        <span class="cta__label">URL to watch</span>
+        <input type="url" name="url" placeholder="https://example.com/the-page-that-matters" required>
+      </label>
+      <label class="cta__field">
+        <span class="cta__label">Email</span>
+        <input type="email" name="email" placeholder="you@company.com" required>
+      </label>
+      <button type="submit" class="cta__submit">Set the monitor</button>
+    </form>
+    <p class="cta__sub">No FOMO on important changes. The substrate has existed since 2017.</p>
   </div>
 </section>
 
