@@ -186,7 +186,7 @@
 <!-- ============================================================ -->
 <!-- SECTION 3 · ARCHITECTURE                                     -->
 <!-- ============================================================ -->
-<section class="architecture" id="architecture" aria-label="Two architectures of agentic search">
+<section class="architecture" id="architecture" aria-label="Two architectures, side by side">
   <div class="architecture__wrapper" data-arch-wrap>
     <header class="architecture__head">
       <p class="architecture__eyebrow"><span class="architecture__dot" aria-hidden="true"></span>Two architectures, side by side</p>
@@ -195,11 +195,16 @@
     </header>
 
     <div class="architecture__cols">
-      <article class="architecture__col" data-arch-col="open-web">
+      <article class="architecture__col" data-arch-col="open-web" data-arch-state="setup">
         <header class="architecture__colhdr">
           <p class="architecture__colhead">Open-web agents</p>
           <p class="architecture__colsub">Google Information Agents, ChatGPT Pulse, Exa, Perplexity</p>
         </header>
+        <div class="architecture__preview">
+          <img src="../assets/openweb-setup.png" alt="Setting up an open-web agent by entering a topic" class="architecture__previewimg" data-preview-state="setup" loading="lazy">
+          <img src="../assets/openweb-alert.png" alt="An open-web agent delivering a synthesized briefing" class="architecture__previewimg" data-preview-state="alert" loading="lazy">
+          <span class="architecture__previewbadge" data-preview-label></span>
+        </div>
         <ol class="architecture__beats" data-beats>
           <li data-beat="1">
             <span class="architecture__beatnum">01</span>
@@ -233,11 +238,16 @@
         <p class="architecture__colfoot">Input: a topic &middot; Freshness: broad &middot; Verification: model-dependent</p>
       </article>
 
-      <article class="architecture__col architecture__col--accent" data-arch-col="precision">
+      <article class="architecture__col architecture__col--accent" data-arch-col="precision" data-arch-state="setup">
         <header class="architecture__colhdr">
           <p class="architecture__colhead">Page-monitoring agents</p>
           <p class="architecture__colsub">Visualping, Distill, Wachete, Fluxguard</p>
         </header>
+        <div class="architecture__preview">
+          <img src="../assets/page-monitor-setup.png" alt="Setting up a page monitor on a specific URL" class="architecture__previewimg" data-preview-state="setup" loading="lazy">
+          <img src="../assets/page-monitor-alert.png" alt="A page-monitor alert with a visual diff" class="architecture__previewimg" data-preview-state="alert" loading="lazy">
+          <span class="architecture__previewbadge" data-preview-label></span>
+        </div>
         <ol class="architecture__beats" data-beats>
           <li data-beat="1">
             <span class="architecture__beatnum">01</span>

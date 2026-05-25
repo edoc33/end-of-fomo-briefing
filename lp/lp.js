@@ -183,6 +183,7 @@ window.addEventListener('load', function () {
     return;
   }
 
+  const cols = document.querySelectorAll('.architecture__col');
   function setBeats(activeUpTo) {
     beatLists.forEach(function (list) {
       list.querySelectorAll('[data-beat]').forEach(function (li) {
@@ -191,6 +192,9 @@ window.addEventListener('load', function () {
         else li.removeAttribute('data-active');
       });
     });
+    // Preview state: setup for beats 1-2, alert for beats 3-4
+    const state = activeUpTo >= 3 ? 'alert' : 'setup';
+    cols.forEach(function (c) { c.setAttribute('data-arch-state', state); });
   }
 
   setBeats(1);
