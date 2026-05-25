@@ -1,0 +1,242 @@
+/*
+ * Visualping Design System — Colors & Type Tokens
+ * Sourced from monorepo: visualping.io/tailwind.config.cjs + src/styles/_colors.scss
+ */
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("fonts/Satoshi-Variable.woff2") format("woff2-variations"),
+       url("fonts/Satoshi-Variable.ttf") format("truetype-variations");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("fonts/Satoshi-VariableItalic.woff2") format("woff2-variations");
+  font-weight: 300 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* === BRAND BLUE — the signature color === */
+  --vp-blue-50:   #F7F9FE;
+  --vp-blue-100:  #EAF1FF;
+  --vp-blue-125:  #D1E9FF;
+  --vp-blue-150:  #DAE9FF;
+  --vp-blue-200:  #DAE6FF;
+  --vp-blue-225:  #F0F9FF;
+  --vp-blue-250:  #B9E6FE;
+  --vp-blue-300:  #A8CBFF;
+  --vp-blue-400:  #F1F8FF;
+  --vp-blue-500:  #1882FF;  /* Primary action / signature dot */
+  --vp-blue-700:  #0B51AE;  /* Primary hover */
+  --vp-blue-800:  #09418B;
+  --vp-blue-850:  #1682FF;
+  --vp-blue-900:  #02307B;
+  --vp-blue-950:  #032967;
+  --vp-blue-1000: #0E265E;
+
+  /* === DARK BLUE / NAVY — section backgrounds, dark headers === */
+  --vp-darkblue-50:  #2D5273;
+  --vp-darkblue-100: #265075;
+  --vp-darkblue-200: #335f87;
+  --vp-darkblue-300: #335F88;
+  --vp-darkblue-400: #182F44;
+  --vp-darkblue-500: #0C2235;
+  --vp-darkblue-600: #0B1F31;
+
+  --vp-deep-blue-800: #00095B;
+  --vp-deep-blue-900: #000024;
+
+  /* === NEUTRAL GRAY === */
+  --vp-gray-50:   #FCFCFD;
+  --vp-gray-100:  #F7F8FB;
+  --vp-gray-200:  #F2F4F8;
+  --vp-gray-250:  #E5E9F1;
+  --vp-gray-300:  #E7EAF1;
+  --vp-gray-400:  #D1D4DB;
+  --vp-gray-500:  #B7BABE;
+  --vp-gray-600:  #98999B;
+  --vp-gray-700:  #787878;
+  --vp-gray-800:  #3A3A3A;
+  --vp-gray-900:  #202020;
+  --vp-gray-1000: #203C55;
+  --vp-ash-300:   #E5E8F0;
+
+  /* === ACCENT COLORS (used in marketing illustrations + value tags) === */
+  --vp-red-100:    #FFECEB;
+  --vp-red-300:    #FFA8AD;
+  --vp-red-500:    #F34949;
+  --vp-red-600:    #DD4B34;
+  --vp-red-700:    #B81B24;
+  --vp-red-900:    #810910;
+
+  --vp-orange-100: #FFF6E5;
+  --vp-orange-300: #FDCE9F;
+  --vp-orange-500: #EC930D;
+  --vp-orange-700: #B77108;
+  --vp-orange-900: #84550F;
+
+  --vp-yellow-200: #FEF7C3;
+
+  --vp-teal-100:   #E4F8F8;
+  --vp-teal-300:   #BAEDEA;
+  --vp-teal-400:   #AEE3E0;
+  --vp-teal-500:   #20B093;
+  --vp-teal-600:   #E4F7F8;
+  --vp-teal-700:   #1B8570;
+  --vp-teal-800:   #5FC0AA;
+  --vp-teal-900:   #0A5848;
+
+  --vp-green-100:  #EAF7E3;
+  --vp-green-200:  #E3FBCC;
+  --vp-green-300:  #A9E1A5;
+  --vp-green-400:  #A6F4C5;
+  --vp-green-500:  #45B013;
+  --vp-green-700:  #377C17;
+  --vp-green-900:  #224A0F;
+
+  --vp-purple-100: #F7F0FF;
+  --vp-purple-200: #ECE9FE;
+  --vp-purple-300: #E4CDFF;
+  --vp-purple-500: #9F60F5;
+  --vp-purple-700: #6A2CC1;
+  --vp-purple-900: #3A156D;
+
+  --vp-pink-100:   #FCE7F6;
+  --vp-pink-200:   #EE46BC;
+
+  --vp-fuchsia-100:#FBE8FF;
+  --vp-fuchsia-500:#D444F1;
+  --vp-moss-100:   #E6F4D7;
+  --vp-moss-500:   #669F2A;
+  --vp-indigo-100: #E0EAFF;
+  --vp-indigo-500: #6172F3;
+  --vp-cyan-100:   #CFF9FE;
+  --vp-cyan-500:   #06AED4;
+
+  /* Semantic */
+  --vp-error-100:   #FEE4E2;
+  --vp-error-500:   #F04438;
+  --vp-warning-100: #FEF0C7;
+  --vp-warning-500: #F79009;
+
+  /* === SEMANTIC TOKENS — use these in product UI === */
+  --bg-page:       #FFFFFF;
+  --bg-subtle:     var(--vp-gray-100);
+  --bg-muted:      var(--vp-gray-200);
+  --bg-tint-blue:  var(--vp-blue-50);
+  --bg-dark:       var(--vp-darkblue-500);
+  --bg-deep:       var(--vp-deep-blue-900);
+
+  --fg-1:          var(--vp-gray-900);   /* Primary text */
+  --fg-2:          var(--vp-gray-800);   /* Body */
+  --fg-3:          var(--vp-gray-700);   /* Muted body */
+  --fg-4:          var(--vp-gray-600);   /* Caption / disabled */
+  --fg-on-dark:    #FFFFFF;
+  --fg-on-dark-2:  rgba(255,255,255,0.72);
+
+  --accent:        var(--vp-blue-500);
+  --accent-hover:  var(--vp-blue-700);
+  --accent-soft:   var(--vp-blue-100);
+  --accent-text:   var(--vp-blue-900);
+
+  --border-subtle: var(--vp-gray-300);
+  --border-default:var(--vp-gray-400);
+  --border-strong: var(--vp-gray-500);
+  --border-accent: var(--vp-blue-500);
+
+  --success:       var(--vp-green-500);
+  --warning:       var(--vp-warning-500);
+  --danger:        var(--vp-red-500);
+  --info:          var(--vp-blue-500);
+
+  /* === TYPOGRAPHY === */
+  --font-sans: "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  --fs-xxxxs: 0.30rem;
+  --fs-xxxs:  0.50rem;
+  --fs-xxs:   0.60rem;
+  --fs-xs:    0.75rem;
+  --fs-vp-sm: 0.75rem;   /* 12px / 18px line-height — used in dense UI */
+  --fs-sm:    0.875rem;
+  --fs-base:  1rem;
+  --fs-lg:    1.125rem;
+  --fs-xl:    1.25rem;
+  --fs-2xl:   1.5rem;
+  --fs-3xl:   1.875rem;
+  --fs-4xl:   2.25rem;
+  --fs-5xl:   3rem;
+  --fs-6xl:   3.75rem;
+  --fs-7xl:   4.5rem;
+
+  --fw-light:    300;
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-black:    900;
+
+  --lh-tight:   1.15;
+  --lh-snug:    1.3;
+  --lh-normal:  1.5;
+  --lh-relaxed: 1.7;
+
+  --tracking-wider: .25em;
+
+  /* === SPACING / RADII / SHADOWS === */
+  --radius-xs:  4px;
+  --radius-sm:  6px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+  --radius-2xl: 24px;
+  --radius-50:  2.5rem;
+  --radius-12xl:3rem;
+  --radius-full:9999px;
+
+  --shadow-xs:  0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  --shadow-sm:  0 1px 3px 0 rgba(16,24,40,0.10), 0 1px 2px -1px rgba(16,24,40,0.10);
+  --shadow-md:  0 4px 6px -1px rgba(16,24,40,0.10), 0 2px 4px -2px rgba(16,24,40,0.10);
+  --shadow-lg:  0 10px 15px -3px rgba(16,24,40,0.10), 0 4px 6px -4px rgba(16,24,40,0.10);
+  --shadow-3xl: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
+  --shadow-card:0 6px 25px rgba(38, 88, 121, 0.14);  /* legacy marketing card shadow */
+
+  /* Easing tokens (from tailwind animation extensions) */
+  --ease-in-expo:  cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --ease-out-expo: cubic-bezier(0.175, 0.885, 0.32, 3.275);
+  --ease-standard: cubic-bezier(0.4, 0, 0.15, 1);
+}
+
+/* === SEMANTIC TYPE STYLES === */
+html, body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  color: var(--fg-1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.vp-display-1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: var(--fw-bold);    line-height: var(--lh-tight); letter-spacing: -0.02em; color: var(--fg-1); }
+.vp-display-2 { font-size: clamp(2rem,   5vw, 3.75rem); font-weight: var(--fw-bold);    line-height: var(--lh-tight); letter-spacing: -0.02em; color: var(--fg-1); }
+.vp-h1        { font-size: var(--fs-5xl); font-weight: var(--fw-bold);     line-height: var(--lh-tight); letter-spacing: -0.015em; color: var(--fg-1); }
+.vp-h2        { font-size: var(--fs-4xl); font-weight: var(--fw-bold);     line-height: var(--lh-snug);  letter-spacing: -0.01em;  color: var(--fg-1); }
+.vp-h3        { font-size: var(--fs-3xl); font-weight: var(--fw-semibold); line-height: var(--lh-snug);  color: var(--fg-1); }
+.vp-h4        { font-size: var(--fs-2xl); font-weight: var(--fw-semibold); line-height: var(--lh-snug);  color: var(--fg-1); }
+.vp-h5        { font-size: var(--fs-xl);  font-weight: var(--fw-semibold); line-height: var(--lh-snug);  color: var(--fg-1); }
+.vp-eyebrow   { font-size: var(--fs-sm);  font-weight: var(--fw-semibold); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.vp-lead      { font-size: var(--fs-xl);  font-weight: var(--fw-regular);  line-height: var(--lh-relaxed); color: var(--fg-2); }
+.vp-body      { font-size: var(--fs-base);font-weight: var(--fw-regular);  line-height: var(--lh-normal);  color: var(--fg-2); }
+.vp-body-sm   { font-size: var(--fs-sm);  font-weight: var(--fw-regular);  line-height: var(--lh-normal);  color: var(--fg-2); }
+.vp-caption   { font-size: var(--fs-vp-sm); font-weight: var(--fw-regular); line-height: 1.5; color: var(--fg-3); }
+.vp-overline  { font-size: var(--fs-xs);  font-weight: var(--fw-semibold); text-transform: uppercase; letter-spacing: 0.12em; color: var(--fg-3); }
+.vp-mono      { font-family: var(--font-mono); font-size: var(--fs-sm); }
+
+/* === LEGACY ALIASES (Tailwind class names → CSS vars, for quick lookups) === */
+.bg-vpBlue-500 { background: var(--vp-blue-500); }
+.text-vpBlue-500 { color: var(--vp-blue-500); }
+.bg-vpBlue-900 { background: var(--vp-blue-900); }

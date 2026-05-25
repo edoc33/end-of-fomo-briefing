@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The End of FOMO — One-page briefing</title>
+<link rel="stylesheet" href="design-tokens.css">
+<style>
+  @page { size: letter portrait; margin: 0; }
+  html, body { margin: 0; padding: 0; background: #f3f4f6; }
+  body { font-family: var(--font-sans); }
+
+  /* On screen, center the page on a dark backdrop. In print, the page fills the sheet. */
+  .sheet {
+    width: 816px;
+    min-height: 1056px;
+    margin: 24px auto;
+    background: #fff;
+    color: var(--vp-gray-900);
+    box-shadow: 0 8px 36px rgba(0,0,0,.18);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    padding: 30px 40px 24px;
+    box-sizing: border-box;
+  }
+  @media print {
+    body { background: #fff; }
+    .sheet { margin: 0; box-shadow: none; }
+    .sheet:first-of-type { page-break-after: always; break-after: page; }
+  }
+
+  /* ── Header ─────────────────────────────────────────────── */
+  .head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+  .head .left { display: flex; flex-direction: column; gap: 10px; }
+  .head img { height: 22px; width: auto; }
+  .eyebrow {
+    font-size: 11px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--vp-blue-500);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .eyebrow .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--vp-blue-500); display: inline-block;
+  }
+  .head h1 {
+    margin: 0; font-size: 28px; font-weight: 800; line-height: 1.05; letter-spacing: -0.025em;
+    white-space: nowrap;
+  }
+  .head h1 .accent { color: var(--vp-blue-500); }
+  .head .meta {
+    text-align: right; font-size: 11px; color: var(--vp-gray-600); line-height: 1.4;
+    font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  /* ── Pull quote band ────────────────────────────────────── */
+  .quote {
+    margin-top: 4px;
+    background: var(--vp-blue-50);
+    border-left: 5px solid var(--vp-blue-500);
+    padding: 8px 20px;
+    display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center;
+  }
+  .quote q {
+    font-size: 17px; line-height: 1.25; font-weight: 500; color: var(--vp-gray-900);
+    font-style: italic; quotes: '\201C' '\201D';
+  }
+  .quote .src { font-size: 11px; color: var(--vp-gray-600); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; white-space: nowrap; }
+  .quote .src strong { color: var(--vp-gray-900); display: block; font-size: 14px; letter-spacing: 0; text-transform: none; margin-bottom: 3px; }
+
+  /* ── Two-column body ────────────────────────────────────── */
+  .body {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 22px;
+    margin-top: 4px;
+    align-content: start;
+  }
+
+  .section { display: flex; flex-direction: column; gap: 7px; }
+  .section h2 {
+    margin: 0; font-size: 11px; font-weight: 800;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--vp-gray-700);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section h2::before {
+    content: ""; width: 22px; height: 2px; background: var(--vp-blue-500); display: inline-block;
+  }
+
+  /* Facts strip */
+  .facts { display: grid; grid-template-columns: 1fr 1fr 1.3fr; gap: 8px; }
+  .fact { background: #fff; border: 1px solid var(--vp-gray-200); border-radius: 6px; padding: 7px 11px; }
+  .fact .k { font-size: 10px; color: var(--vp-gray-500); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .fact .v { font-size: 17px; color: var(--vp-gray-900); font-weight: 700; line-height: 1.2; margin-top: 3px; }
+
+  /* Use cases compact */
+  .use-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; }
+  .use {
+    background: #fff; border: 1px solid var(--vp-gray-200); border-radius: 6px;
+    padding: 6px 9px; display: flex; flex-direction: column; gap: 1px;
+  }
+  .use .tag {
+    align-self: flex-start; padding: 2px 7px; border-radius: 3px;
+    font-size: 9px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .tag-c { background: var(--vp-blue-100); color: var(--vp-blue-900); }
+  .tag-b { background: var(--vp-orange-100); color: var(--vp-orange-900); }
+  .use .name { font-size: 14px; font-weight: 700; color: var(--vp-gray-900); line-height: 1.2; }
+  .use .miss { font-size: 12px; color: var(--vp-red-700); line-height: 1.4; font-weight: 500; }
+
+  /* Alternatives table */
+  .alts { border: 1px solid var(--vp-gray-200); border-radius: 7px; overflow: hidden; }
+  .alts .row { display: grid; grid-template-columns: 26px 1fr 80px 110px; gap: 10px; align-items: center; padding: 5px 11px; font-size: 12px; border-top: 1px solid var(--vp-gray-200); }
+  .alts .row:first-child { border-top: none; background: var(--vp-gray-100); }
+  .alts .row:first-child div { font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--vp-gray-600); }
+  .alts .logo { display: flex; align-items: center; justify-content: center; }
+  .alts .name { font-weight: 700; color: var(--vp-gray-900); font-size: 12.5px; }
+  .alts .desc { color: var(--vp-gray-500); font-weight: 500; font-size: 11.5px; line-height: 1.3; display: inline; margin-left: 4px; }
+  .alts .desc::before { content: " · "; color: var(--vp-gray-300); }
+  .alts .since, .alts .price { color: var(--vp-gray-600); font-size: 11px; line-height: 1.3; }
+  .alts .price strong { color: var(--vp-gray-900); display: inline; font-size: 12px; margin-right: 4px; }
+  .alts .row.us { background: var(--vp-blue-50); }
+  .alts .row.us .name { color: var(--vp-blue-700); }
+  .alts .row.us .price strong { color: var(--vp-blue-700); }
+
+  /* Stats row */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .stat {
+    background: var(--vp-deep-blue-900, var(--vp-gray-900));
+    border-radius: 6px;
+    padding: 6px 12px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .stat .n {
+    font-size: 26px; font-weight: 800; color: #fff;
+    line-height: 1; letter-spacing: -0.02em; flex-shrink: 0;
+  }
+  .stat .l {
+    font-size: 10px; color: rgba(255,255,255,0.78); font-weight: 600;
+    line-height: 1.3;
+  }
+
+  /* Angles list */
+  .angles { display: flex; flex-direction: column; gap: 5px; }
+  .angle { display: grid; grid-template-columns: 24px 1fr; gap: 10px; align-items: baseline; font-size: 13px; line-height: 1.35; }
+  .angle .n { color: var(--vp-blue-500); font-weight: 800; font-size: 15px; letter-spacing: -0.01em; }
+  .angle .t { color: var(--vp-gray-800); }
+  .angle .t strong { color: var(--vp-gray-900); font-weight: 700; }
+
+  /* Two architectures — full-width comparison */
+  .arch-wide { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .arch-card {
+    background: #fff;
+    border: 1px solid var(--vp-gray-200);
+    border-radius: 8px;
+    padding: 9px 12px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .arch-card.open { border-top: 3px solid var(--vp-green-500); }
+  .arch-card.page { border-top: 3px solid var(--vp-blue-500); }
+  .arch-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+  .arch-badge {
+    font-size: 12px; font-weight: 800; letter-spacing: 0.06em;
+    color: var(--vp-gray-900);
+  }
+  .arch-badge.open { color: var(--vp-green-700); }
+  .arch-badge.page { color: var(--vp-blue-700); }
+  .arch-who { font-size: 11px; color: var(--vp-gray-500); font-weight: 600; }
+  .arch-tag {
+    font-size: 14px; font-weight: 700; color: var(--vp-gray-900);
+    line-height: 1.2; letter-spacing: -0.005em;
+  }
+  .arch-tag-meta { color: var(--vp-gray-600); font-weight: 500; font-size: 11.5px; }
+  .arch-viz {
+    background: var(--vp-gray-100);
+    border-radius: 6px;
+    padding: 2px 4px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .arch-rows { display: flex; flex-direction: column; gap: 2px; }
+  .arch-row {
+    display: grid; grid-template-columns: 64px 1fr; gap: 8px;
+    font-size: 11px; line-height: 1.35;
+    padding: 2px 0;
+  }
+  .arch-k {
+    font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+    font-weight: 800; color: var(--vp-gray-500); align-self: center;
+  }
+  .arch-v { color: var(--vp-gray-800); font-weight: 500; }
+
+  /* Architecture mini diagram */
+  .arch {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  }
+  .arch .col {
+    background: #fff; border: 1px solid var(--vp-gray-200); border-radius: 7px; padding: 9px 12px;
+    display: flex; flex-direction: column; gap: 3px;
+  }
+  .arch .col.us { border-color: var(--vp-blue-500); border-width: 1.5px; }
+  .arch .col h3 {
+    margin: 0; font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--vp-gray-500);
+  }
+  .arch .col.us h3 { color: var(--vp-blue-700); }
+  .arch .col .who { font-size: 12px; font-weight: 700; color: var(--vp-gray-900); line-height: 1.15; }
+  .arch .col .pat { font-size: 11px; color: var(--vp-gray-700); line-height: 1.3; }
+
+  /* ── Footer ─────────────────────────────────────────────── */
+  .foot {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid var(--vp-gray-200);
+    display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: end;
+  }
+  .foot .tagline {
+    font-size: 36px; font-weight: 800; letter-spacing: -0.025em; line-height: 1;
+    color: var(--vp-gray-900);
+  }
+  .foot .tagline .accent { color: var(--vp-blue-500); }
+  .foot .links { text-align: right; font-size: 11px; color: var(--vp-gray-600); line-height: 1.55; }
+  .foot .links a { color: var(--vp-blue-700); text-decoration: none; font-weight: 600; word-break: break-all; }
+  .foot .links strong { color: var(--vp-gray-900); font-weight: 700; display: block; margin-bottom: 3px; font-size: 12px; }
+
+  /* Small brand mark */
+  .gmark {
+    width: 18px; height: 18px; display:inline-flex; align-items:center; justify-content:center;
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <!-- ===== HEADER ===== -->
+  <div class="head">
+    <div class="left">
+      <img src="assets/visualping-logo.svg" alt="Visualping">
+      <div class="eyebrow"><span class="dot"></span>Press briefing &middot; May 21, 2026</div>
+      <h1>The Google I/O story <span class="accent">that got buried.</span></h1>
+    </div>
+    <div class="meta">
+      Re:&nbsp;Google&nbsp;I/O 2026<br>
+      Information&nbsp;agents<br>
+      <span style="color: var(--vp-gray-400);">One-page briefing</span>
+    </div>
+  </div>
+
+  <!-- ===== QUOTE BAND ===== -->
+  <div class="quote">
+    <q>We are entering the era of <strong style="color: var(--vp-blue-700); font-style: normal;">Search agents</strong>.</q>
+    <div class="src">
+      <strong>Elizabeth Reid</strong>
+      VP Search, Google &middot; I/O 2026
+    </div>
+  </div>
+
+  <!-- ===== BODY ===== -->
+  <div class="body">
+
+    <!-- LEFT COLUMN -->
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+
+      <div class="section">
+        <h2>What Google announced</h2>
+        <div style="font-size: 11px; line-height: 1.45; color: var(--vp-gray-700);">
+          Information agents intelligently scan blogs, news, social posts, finance, shopping &amp; sports data, <strong style="color: var(--vp-gray-900);">monitoring for changes related to a user&rsquo;s specific question</strong>.<br><span style="display: inline-block; margin-top: 6px;"><strong style="color: var(--vp-gray-900);">The shift:</strong> from &ldquo;find this&rdquo; to &ldquo;don&rsquo;t let me miss it.&rdquo;</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="k">Launches</div><div class="v">Summer 2026</div></div>
+          <div class="fact"><div class="k">Access</div><div class="v">AI Pro &amp; Ultra</div></div>
+          <div class="fact"><div class="k">Powered by</div><div class="v">Gemini 3.5 Flash</div></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Why information agents matter</h2>
+        <div class="use-grid">
+          <div class="use"><span class="tag tag-c">Consumer</span><div class="name">Concert &amp; sneaker drops</div><div class="miss">Sold out in 90 seconds. Resale 10&times; face value.</div></div>
+          <div class="use"><span class="tag tag-c">Consumer</span><div class="name">Travel &amp; flight deals</div><div class="miss">Fare drops 60% one afternoon. Gone tomorrow.</div></div>
+          <div class="use"><span class="tag tag-c">Consumer</span><div class="name">Personal investments</div><div class="miss">SEC filing drops a position 15% at open.</div></div>
+          <div class="use"><span class="tag tag-b">Business</span><div class="name">Competitor pricing</div><div class="miss">Cuts 30% Monday; you hear Friday from churn.</div></div>
+          <div class="use"><span class="tag tag-b">Business</span><div class="name">Regulatory change</div><div class="miss">Guidance posts overnight. You find out from a fine.</div></div>
+          <div class="use"><span class="tag tag-b">Business</span><div class="name">Tenders &amp; deadlines</div><div class="miss">$50M RFP opens with short window. Bid passes.</div></div>
+        </div>
+      </div>
+
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+
+      <div class="section">
+        <h2>Alternatives consumers can use today</h2>
+        <div class="alts">
+          <div class="row"><div></div><div>Product</div><div>Since</div><div>Pricing</div></div>
+
+          <div class="row">
+            <div class="logo">
+              <svg width="14" height="14" viewBox="0 0 48 48" aria-label="Google">
+                <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C12.955 4 4 12.955 4 24s8.955 20 20 20s20-8.955 20-20c0-1.341-.138-2.65-.389-3.917"/>
+                <path fill="#FF3D00" d="m6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C16.318 4 9.656 8.337 6.306 14.691"/>
+                <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44"/>
+                <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917"/>
+              </svg>
+            </div>
+            <div><span class="name">Google Information Agents</span>&nbsp;<span class="desc">&middot; AI monitoring across the web</span></div>
+            <div class="since">Summer 2026</div>
+            <div class="price"><strong>$20&ndash;$200/mo</strong><br>AI Pro &amp; Ultra</div>
+          </div>
+
+          <div class="row">
+            <div class="logo">
+              <svg width="14" height="14" viewBox="0 0 32 32" aria-label="ChatGPT"><path fill="#0FA37F" d="M29.706 13.084a7.9 7.9 0 0 0-.687-6.482a8.04 8.04 0 0 0-8.66-3.848A7.96 7.96 0 0 0 14.41.49a8.038 8.038 0 0 0-7.659 5.564a7.92 7.92 0 0 0-5.301 3.84a8.062 8.062 0 0 0 .988 9.43a7.9 7.9 0 0 0 .687 6.483a8.04 8.04 0 0 0 8.66 3.848a7.95 7.95 0 0 0 5.948 2.65a8.03 8.03 0 0 0 7.663-5.566a7.93 7.93 0 0 0 5.3-3.84a8.04 8.04 0 0 0-.99-9.428zm-12.03 16.84a5.95 5.95 0 0 1-3.825-1.382q.072-.04.2-.111l6.514-3.762a1.07 1.07 0 0 0 .537-.928v-9.18l2.752 1.59l.026.03v7.6c-.005 3.281-2.67 5.94-5.949 5.943zm-12.79-5.464a5.97 5.97 0 0 1-.712-4.005q.07.043.193.118l6.515 3.762a1.06 1.06 0 0 0 1.07 0l7.954-4.591v3.18a.1.1 0 0 1-.04.085l-6.585 3.802a5.95 5.95 0 0 1-8.122-2.18zM3.183 10.535a5.93 5.93 0 0 1 3.097-2.605v7.738a1.06 1.06 0 0 0 .533.928l7.954 4.59l-2.753 1.59a.1.1 0 0 1-.094.008L5.342 18.98a5.95 5.95 0 0 1-2.18-8.124zm22.61 5.262l-7.955-4.594l2.753-1.587a.1.1 0 0 1 .094-.009l6.578 3.798a5.95 5.95 0 0 1-.917 10.728v-7.74a1.05 1.05 0 0 0-.546-.92zm2.74-4.124q-.07-.045-.193-.118l-6.515-3.762a1.06 1.06 0 0 0-1.07 0l-7.953 4.59V9.205a.1.1 0 0 1 .037-.085l6.585-3.798a5.95 5.95 0 0 1 8.835 6.16zM10.962 17.625l-2.753-1.589a.1.1 0 0 1-.025-.03V8.404a5.95 5.95 0 0 1 9.76-4.572q-.073.04-.197.111l-6.514 3.762a1.07 1.07 0 0 0-.538.928l-.003 9.176zm1.495-3.224L16 12.357l3.543 2.044v4.088l-3.543 2.045l-3.544-2.045z"/></svg>
+            </div>
+            <div><span class="name">ChatGPT Pulse</span>&nbsp;<span class="desc">&middot; Async research as morning briefs</span></div>
+            <div class="since">Sept 2025</div>
+            <div class="price"><strong>$200/mo</strong><br>ChatGPT Pro</div>
+          </div>
+
+          <div class="row">
+            <div class="logo">
+              <svg width="14" height="14" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="#1a1a1a" stroke-width="2"/><circle cx="12" cy="12" r="3.5" fill="#1a1a1a"/></svg>
+            </div>
+            <div><span class="name">Exa Monitors</span>&nbsp;<span class="desc">&middot; Developer API for scheduled web searches</span></div>
+            <div class="since">$250M, 2026</div>
+            <div class="price"><strong>From $49/mo</strong><br>API</div>
+          </div>
+
+          <div class="row">
+            <div class="logo">
+              <svg width="14" height="14" viewBox="0 0 48 48" aria-label="Google Alerts"><path fill="#FFC107" d="M24 4C13.523 4 5 12.523 5 23v9.5l-3 3V38h44v-2.5l-3-3V23C43 12.523 34.477 4 24 4"/><path fill="#FF3D00" d="M24 4C19.082 4 14.6 5.881 11.247 8.953l28.8 28.8c-.32-.34-.553-.66-.94-1.247l-2.094-2.094a17.04 17.04 0 0 0 6.987-13.412C44 14.524 35.477 4 24 4"/><path fill="#1976D2" d="M5 23v9.5l-3 3V38h21.5L11.247 26.747A18.96 18.96 0 0 1 5 23"/><circle fill="#4CAF50" cx="24" cy="42" r="4"/></svg>
+            </div>
+            <div><span class="name">Google Alerts</span>&nbsp;<span class="desc">&middot; Email on new keyword matches</span></div>
+            <div class="since">Since 2003</div>
+            <div class="price"><strong>Free</strong><br>The original</div>
+          </div>
+
+          <div class="row us">
+            <div class="logo">
+              <img src="assets/visualping-mark.svg" alt="" style="width: 14px; height: 14px;">
+            </div>
+            <div><span class="name">Visualping</span>&nbsp;<span class="desc">&middot; Page monitoring agent &middot; precise diffs</span></div>
+            <div class="since">Since 2017</div>
+            <div class="price"><strong>From $10/mo</strong><br>Free tier</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== BY THE NUMBERS — full-width stats strip ===== -->
+  <div class="section" style="margin-top: 4px;">
+    <h2>By the numbers</h2>
+    <div class="stats">
+      <div class="stat"><div class="n">&lt;&thinsp;1<span style="font-size:11px;">%</span></div><div class="l">Pages change weekly</div></div>
+      <div class="stat"><div class="n">16.8M</div><div class="l">Visualping checks per month</div></div>
+      <div class="stat"><div class="n">1 in 5</div><div class="l">Detected changes flagged important</div></div>
+      <div class="stat"><div class="n">$250M</div><div class="l">Exa Series C, May 2026</div></div>
+    </div>
+  </div>
+
+  <!-- ===== TWO ARCHITECTURES — full-width comparison ===== -->
+  <div class="section" style="margin-top: 4px;">
+    <h2>Two architectures, two patterns</h2>
+    <div class="arch-wide">
+
+      <!-- LEFT: Open-web agents -->
+      <div class="arch-card open">
+        <div class="arch-head">
+          <span class="arch-badge open">Open-web agents</span>
+          <span class="arch-who">Google &middot; ChatGPT &middot; Exa</span>
+        </div>
+        <div class="arch-tag">One question, fans across many sources<br><span class="arch-tag-meta">&hellip; at one moment in time.</span></div>
+
+        <!-- Mini visual: fan-out diagram -->
+        <div class="arch-viz">
+          <svg viewBox="0 0 260 90" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 56px;">
+            <defs>
+              <linearGradient id="rayL2" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="var(--vp-green-500)" stop-opacity="0.6"/>
+                <stop offset="1" stop-color="var(--vp-green-500)" stop-opacity="0.15"/>
+              </linearGradient>
+            </defs>
+            <!-- origin question dot -->
+            <circle cx="20" cy="45" r="9" fill="var(--vp-green-100)" stroke="var(--vp-green-500)" stroke-width="1.5"/>
+            <text x="20" y="49" text-anchor="middle" font-size="11" font-weight="800" fill="var(--vp-green-700)" font-family="var(--font-sans)">?</text>
+            <!-- rays -->
+            <g stroke="url(#rayL2)" stroke-width="1.5" fill="none">
+              <line x1="35" y1="45" x2="115" y2="12"/>
+              <line x1="35" y1="45" x2="115" y2="32"/>
+              <line x1="35" y1="45" x2="115" y2="58"/>
+              <line x1="35" y1="45" x2="115" y2="78"/>
+            </g>
+            <!-- source pills -->
+            <g font-size="9" font-weight="700" fill="var(--vp-gray-700)" font-family="var(--font-sans)">
+              <rect x="118" y="3" rx="10" ry="10" width="58" height="18" fill="#fff" stroke="var(--vp-gray-400)" stroke-width="1.2"/>
+              <text x="147" y="15" text-anchor="middle">News</text>
+              <rect x="118" y="23" rx="10" ry="10" width="58" height="18" fill="#fff" stroke="var(--vp-gray-400)" stroke-width="1.2"/>
+              <text x="147" y="35" text-anchor="middle">Blogs</text>
+              <rect x="118" y="49" rx="10" ry="10" width="58" height="18" fill="#fff" stroke="var(--vp-gray-400)" stroke-width="1.2"/>
+              <text x="147" y="61" text-anchor="middle">Forums</text>
+              <rect x="118" y="69" rx="10" ry="10" width="58" height="18" fill="#fff" stroke="var(--vp-gray-400)" stroke-width="1.2"/>
+              <text x="147" y="81" text-anchor="middle">Social</text>
+            </g>
+            <!-- converging rays into digest -->
+            <g stroke="url(#rayL2)" stroke-width="1.5" fill="none" transform="translate(260, 0) scale(-1, 1)">
+              <line x1="35" y1="45" x2="85" y2="12"/>
+              <line x1="35" y1="45" x2="85" y2="32"/>
+              <line x1="35" y1="45" x2="85" y2="58"/>
+              <line x1="35" y1="45" x2="85" y2="78"/>
+            </g>
+            <!-- digest output -->
+            <rect x="218" y="32" rx="3" ry="3" width="36" height="26" fill="var(--vp-green-500)"/>
+            <text x="236" y="48" text-anchor="middle" font-size="8.5" font-weight="800" fill="#fff" font-family="var(--font-sans)">DIGEST</text>
+          </svg>
+        </div>
+
+        <div class="arch-rows">
+          <div class="arch-row"><span class="arch-k">Input</span><span class="arch-v">A standing question / topic</span></div>
+          <div class="arch-row"><span class="arch-k">Output</span><span class="arch-v">Synthesized digest, daily cadence</span></div>
+          <div class="arch-row"><span class="arch-k">Best for</span><span class="arch-v">Topic discovery, ambient awareness</span></div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Page monitoring agents -->
+      <div class="arch-card page">
+        <div class="arch-head">
+          <span class="arch-badge page">Page monitoring agents</span>
+          <span class="arch-who">Visualping</span>
+        </div>
+        <div class="arch-tag">One page, checked across many moments<br><span class="arch-tag-meta">&hellip; in time.</span></div>
+
+        <!-- Mini visual: timeline diagram -->
+        <div class="arch-viz">
+          <svg viewBox="0 0 260 90" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 56px;">
+            <!-- URL source on left -->
+            <rect x="6" y="50" rx="4" ry="4" width="40" height="20" fill="#fff" stroke="var(--vp-blue-500)" stroke-width="1.5"/>
+            <text x="26" y="64" text-anchor="middle" font-size="9" font-weight="700" fill="var(--vp-blue-700)" font-family="var(--font-sans)">URL</text>
+            <!-- arrow into timeline -->
+            <path d="M50 60 L60 60" stroke="var(--vp-gray-400)" stroke-width="1.5"/>
+            <!-- timeline axis -->
+            <line x1="62" y1="60" x2="218" y2="60" stroke="var(--vp-gray-300)" stroke-width="1.5"/>
+            <path d="M214 56 L220 60 L214 64" stroke="var(--vp-gray-400)" stroke-width="1.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+            <!-- 4 snapshot dots (no change) -->
+            <g>
+              <circle cx="76"  cy="60" r="3" fill="#fff" stroke="var(--vp-gray-400)" stroke-width="1.5"/>
+              <circle cx="106" cy="60" r="3" fill="#fff" stroke="var(--vp-gray-400)" stroke-width="1.5"/>
+              <circle cx="136" cy="60" r="3" fill="#fff" stroke="var(--vp-gray-400)" stroke-width="1.5"/>
+              <circle cx="166" cy="60" r="3" fill="#fff" stroke="var(--vp-gray-400)" stroke-width="1.5"/>
+            </g>
+            <!-- change-detected snapshot — bigger, blue, with diff label -->
+            <circle cx="198" cy="60" r="6" fill="var(--vp-blue-500)"/>
+            <text x="198" y="40" text-anchor="middle" font-size="9" font-weight="800" fill="var(--vp-blue-700)" font-family="var(--font-sans)">CHANGE</text>
+            <!-- arrow to alert -->
+            <path d="M210 60 L222 60" stroke="var(--vp-blue-500)" stroke-width="1.5"/>
+            <path d="M219 56 L224 60 L219 64" stroke="var(--vp-blue-500)" stroke-width="1.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+            <!-- alert output -->
+            <rect x="231" y="48" rx="3" ry="3" width="28" height="24" fill="var(--vp-blue-500)"/>
+            <text x="245" y="63" text-anchor="middle" font-size="8" font-weight="800" fill="#fff" font-family="var(--font-sans)">ALERT</text>
+          </svg>
+        </div>
+
+        <div class="arch-rows">
+          <div class="arch-row"><span class="arch-k">Input</span><span class="arch-v">A specific URL</span></div>
+          <div class="arch-row"><span class="arch-k">Output</span><span class="arch-v">Instant alert with the precise diff</span></div>
+          <div class="arch-row"><span class="arch-k">Best for</span><span class="arch-v">Pricing, status, regulatory, dockets</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="foot">
+    <div class="tagline">The end of <span class="accent">FOMO.</span></div>
+    <div class="links">
+      <strong>Primary sources</strong>
+      blog.google &middot; <span style="color: var(--vp-gray-900); font-weight: 600;">A new era for AI Search</span><br>
+      youtube.com/live/wYSncx9zLIU?t=2856 (~46:56)<br>
+      <span style="color: var(--vp-gray-400);">Press materials &middot; Visualping &middot; visualping.io/press</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============================================================
+     PAGE 2 — Information agents in practice
+============================================================= -->
+<div class="sheet" style="grid-template-rows: auto 1fr 1fr auto;">
+
+  <!-- Page 2 header (compact) -->
+  <div class="head" style="align-items: center;">
+    <div class="left">
+      <div class="eyebrow"><span class="dot"></span>Information agents &middot; in practice</div>
+      <h1 style="font-size: 30px; max-width: 600px;">Open-web agents fan across sources.<br><span class="accent">Page monitoring agents watch one page.</span></h1>
+    </div>
+    <div class="meta">
+      Page 2 of 2<br>
+      <span style="color: var(--vp-gray-400);">Visual examples</span>
+    </div>
+  </div>
+
+  <!-- ===== OPEN-WEB DEMO PANEL ===== -->
+  <div class="demo" style="display: grid; grid-template-columns: 22px 1fr 1fr 1fr; gap: 14px; padding-top: 16px; align-items: stretch; flex: 1; min-height: 0;">
+    <div style="writing-mode: vertical-rl; transform: rotate(180deg); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: var(--vp-green-700); display: flex; align-items: center; justify-content: center; background: var(--vp-green-100); border-radius: 4px;">Open-web agent &middot; Google, ChatGPT, Exa</div>
+
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <div style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 800; color: var(--vp-gray-500);">1 &middot; Set up</div>
+      <div style="flex: 1; background: #fff; border: 1px solid var(--vp-gray-200); border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 8px;">
+        <img src="assets/openweb-setup.png" alt="Asking Google Search to create an information agent" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+      </div>
+      <div style="font-size: 12px; color: var(--vp-gray-600); line-height: 1.45;">A standing request: <em>&ldquo;Keep me updated when athletes announce sneaker collabs.&rdquo;</em></div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <div style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 800; color: var(--vp-gray-500);">2 &middot; Alert</div>
+      <div style="flex: 1; background: #fff; border: 1px solid var(--vp-gray-200); border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 8px;">
+        <img src="assets/openweb-alert.png" alt="Information agent push notification on lock screen" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+      </div>
+      <div style="font-size: 12px; color: var(--vp-gray-600); line-height: 1.45;">Synthesized push from the open web, delivered as a lock-screen notification.</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; justify-content: center; gap: 8px; padding-left: 6px;">
+      <div style="font-size: 13px; line-height: 1.5; color: var(--vp-gray-800);">
+        <strong style="color: var(--vp-green-700); display: block; font-size: 14px; margin-bottom: 6px;">One question · many sources</strong>
+        Scans across <strong>news, blogs, forums, social</strong> at one moment. Best when the source list is unknown.
+      </div>
+      <div style="font-size: 12px; color: var(--vp-gray-500); line-height: 1.5;">
+        <span style="font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--vp-gray-700); font-size: 11px;">Output</span><br>
+        Synthesized digest, daily cadence
+      </div>
+      <div style="font-size: 12px; color: var(--vp-gray-500); line-height: 1.5;">
+        <span style="font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--vp-gray-700); font-size: 11px;">Best for</span><br>
+        <em>&ldquo;What&rsquo;s new about X across the web?&rdquo;</em>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PAGE MONITORING DEMO PANEL ===== -->
+  <div class="demo" style="display: grid; grid-template-columns: 22px 1fr 1fr 1fr; gap: 14px; padding-top: 18px; border-top: 1px solid var(--vp-gray-200); margin-top: 18px; align-items: stretch; flex: 1; min-height: 0;">
+    <div style="writing-mode: vertical-rl; transform: rotate(180deg); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: var(--vp-blue-700); display: flex; align-items: center; justify-content: center; background: var(--vp-blue-50); border-radius: 4px; border: 1.5px solid var(--vp-blue-500);">Page monitoring agent &middot; Visualping</div>
+
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <div style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 800; color: var(--vp-gray-500);">1 &middot; Set up</div>
+      <div style="flex: 1; background: #fff; border: 1px solid var(--vp-gray-200); border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+        <img src="assets/page-monitor-setup.png" alt="Setting up a Visualping monitor on a Nike product page" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+      </div>
+      <div style="font-size: 12px; color: var(--vp-gray-600); line-height: 1.45;">User picks the page and tells Visualping <em>what</em> to watch for: &ldquo;size 7 is back in stock.&rdquo;</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <div style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 800; color: var(--vp-gray-500);">2 &middot; Alert</div>
+      <div style="flex: 1; background: #fff; border: 1px solid var(--vp-gray-200); border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 8px;">
+        <img src="assets/page-monitor-alert.png" alt="Email alert from Visualping showing the exact change on the page" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+      </div>
+      <div style="font-size: 12px; color: var(--vp-gray-600); line-height: 1.45;">Precise diff highlighted: <em>&ldquo;Out of stock&rdquo;</em> is now <em>&ldquo;Add to bag.&rdquo;</em></div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; justify-content: center; gap: 8px; padding-left: 6px;">
+      <div style="font-size: 13px; line-height: 1.5; color: var(--vp-gray-800);">
+        <strong style="color: var(--vp-blue-700); display: block; font-size: 14px; margin-bottom: 6px;">One page · many moments</strong>
+        Checks the <strong>same URL on a fast schedule</strong> (minutes, hours, or daily) and alerts the moment it changes.
+      </div>
+      <div style="font-size: 12px; color: var(--vp-gray-500); line-height: 1.5;">
+        <span style="font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--vp-gray-700); font-size: 11px;">Output</span><br>
+        Exact-change alert, delivered instantly
+      </div>
+      <div style="font-size: 12px; color: var(--vp-gray-500); line-height: 1.5;">
+        <span style="font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--vp-gray-700); font-size: 11px;">Best for</span><br>
+        <em>&ldquo;Only tell me when this changes.&rdquo;</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="tagline">The end of <span class="accent">FOMO.</span></div>
+    <div class="links">
+      <strong>Get in touch</strong>
+      <span style="color: var(--vp-gray-900); font-weight: 600;">press@visualping.io</span><br>
+      <span style="color: var(--vp-gray-500);">visualping.io/press &middot; 16.8M monthly page checks &middot; 1 in 5 flagged important</span>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
