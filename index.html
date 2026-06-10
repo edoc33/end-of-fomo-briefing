@@ -23,19 +23,21 @@
 </style>
 <script type="application/json" id="speaker-notes">
 [
-  "Welcome. This is a briefing for journalists covering the AI search story out of Google I/O 2026. Last week Google announced what they're calling 'information agents,' AI agents that monitor the web for changes tied to a user's query. Most of the I/O recap coverage focused on AI Mode and the redesigned Search box. The agents got a paragraph. In the next ten minutes I want to do three things: walk through what Google actually announced, explain why this category matters, and run through the alternatives consumers can already use today. There are a few angles in here you may want to pitch.",
-  "Before anything else, here are the two primary sources for the announcement. The first is the keynote itself — the link is timestamped to Liz Reid's section, around the 46:56 mark, where she introduces information agents directly. The second is Google's official launch post on blog.google; the URL deep-links to the search-agents anchor. Everything I'm about to say is grounded in those two pieces. You'll find both in the press kit.",
-  "Here's the core announcement, in Reid's words. Information agents intelligently look across blogs, news sites, social posts and Google's freshest data — finance, shopping, sports — to monitor for changes related to your specific question. Quick facts: launches summer 2026, gated behind AI Pro and Ultra subscriptions, powered by Gemini 3.5 Flash. The translation: Google is now shipping web-monitoring agents to consumers. Before I/O, this category didn't really have a broadly-used consumer name. Now it does.",
-  "Why does this matter? AI search answers the question 'what is true right now?' But prices change, policies update, deadlines pass, opportunities open and close while you're looking elsewhere. Information agents keep watching after the search ends. On the consumer side: concert and sneaker drops sell out in 90 seconds; flight fares move in a single afternoon; an SEC filing can drop a stock 15% at the open. On the business side: competitor pricing moves, regulatory changes, government tenders with seven-day windows. The category is broad. And awareness is still very low — most consumers don't know it exists.",
-  "Here's the coverage gap that creates the opportunity. Across the major I/O 2026 recaps (TechCrunch, The Verge, The Next Web, Bloomberg), AI Mode going global got the most ink. The redesigned Search box, Gemini 3.5 Flash, agentic booking, generative UI in Search all got more attention than information agents. Here's why the angle is open. Big news, small share of voice. The shift itself is arguably the biggest in Search today: AI Mode still requires a user to ask, but an information agent runs from a standing request. And almost no one connected the announcement to use-cases consumers already pay for.",
-  "Google's agents launch this summer. Several alternatives exist already. On the open-web side there's ChatGPT Pulse — live since September 2025, asynchronous research delivered as morning briefs, $200 a month. There's Exa Monitors, a developer API that just raised a $250M Series C in May. And there's Google Alerts, the original, free, live since 2003. On the page-monitoring side, that's us — Visualping. We processed 16.8 million page checks in April. Our AI flagged 1 in 5 detected changes as important and suppressed the rest as noise. Free tier, premium starts at $10 a month. The interesting framing: you don't have to wait for Google.",
-  "There are two architectures here, and they do different jobs. Open-web agents — Google, ChatGPT Pulse, Exa — are best when the source list is unknown. They discover sources, they track a broad topic across many sources, they start from a topic instead of a URL. The trade-offs: blocked or paywalled pages limit them, they typically run daily, and frequent checks get expensive. Page monitoring agents like Visualping are best when the exact page matters. The user picks the page. Checks can be frequent. The alert shows you precisely what changed. Most readers will end up wanting both.",
-  "Here's how each architecture works as a flow. An open-web agent takes an open question — 'startups that received Series B funding' — crawls broadly across the web, synthesizes the results into a digest, alerts you, roughly daily. Best for discovery, topic tracking, ambient awareness. A page monitor takes a specific URL — say, a competitor's pricing page — checks it on a schedule, runs a diff, and alerts the moment a specific change happens. Best for 'only tell me when this product falls below $200': pricing, status pages, regulatory updates, dockets.",
-  "Two reasons this category is becoming a market. First, the supply side: less than 1% of web pages change in any given week, and most of those changes are noise (ad rotations, layout tweaks, timestamps). The slice users actually want alerts about (prices, policies, job postings, regulatory filings, status pages, court dockets) is small, but it's exactly the slice where missing a change is expensive. Second, the demand side: Google named it at I/O. Exa raised $250M at a $2.2B valuation in May. Visualping AI processed 16.8 million page checks in April. 1 in 5 detected changes got flagged as important; the other four out of five were suppressed as noise. That's the architectural difference between page monitoring and open-web agents: per-event classification instead of synthesis after the fact. ChatGPT Pulse is a Pro feature. Consumers and businesses already pay for this; they just called it different names. Thanks. Happy to take questions, and the full kit is yours.",
-  "Just to make the open-web flow concrete: a user asks a question, the agent runs across many sources, synthesizes the findings, and delivers a daily-cadence digest. The output is a brief — not a diff. You don't get to point at the exact change; you get a summary.",
-  "And here's the page monitoring version. The user picks a specific URL. Visualping checks it according to the schedule the user sets (minutes, hours, or daily). When the page changes, you get an email (or a Slack message, or a Teams ping) showing exactly what changed, highlighted on the page. The point: precision, on a known page, on a fast cadence.",
-  "Some journalists are already in this beat — these are the people most likely to take the story and run with it. Casey Newton at Platformer and Hard Fork. Kevin Roose at the Times. Maxwell Zeff at TechCrunch — he covered the ChatGPT Pulse launch last September. Will Knight at Wired. Madhumita Murgia, AI editor at the FT. Alex Konrad at Upstarts. And of course Elizabeth Reid herself is the primary source on the Google side. The press kit has a fuller list of regional and trade press on request.",
-  "Here's the pitch in one line. Google calls them information agents. We've been calling it the end of FOMO. The behavior is the same. A standing request to be told when something changes, and Google I/O 2026 just put light on a category that was, until last week, largely unnamed for consumers."
+ "Welcome. This briefing covers the web-monitoring category story out of two announcements: Google's information agents at I/O on May 19, and Apple's Notify Me in Safari at WWDC on June 8. Both got minimal coverage relative to their significance. In the next ten minutes: what each company announced, the three technologies underneath the category, and the alternatives consumers can use today.",
+ "Two announcements, 20 days apart, and here are the primary sources for both. On the Google side: the keynote, timestamped to Liz Reid's section where she says we are entering the era of Search agents, plus the official blog.google post. On the Apple side: the WWDC keynote's Safari segment, where Apple framed the problem in one line, people keep tabs open because they're waiting for something, plus the MacRumors writeup. All four links are in the press kit.",
+ "Here's the core announcement, in Reid's words. Information agents intelligently look across blogs, news sites, social posts and Google's freshest data — finance, shopping, sports — to monitor for changes related to your specific question. Quick facts: launches summer 2026, gated behind AI Pro and Ultra subscriptions, powered by Gemini 3.5 Flash. The translation: Google is now shipping web-monitoring agents to consumers. Before I/O, this category didn't really have a broadly-used consumer name. Now it does.",
+ "Here's the Apple announcement. Notify Me: the user names the change they're waiting for, on the page, and leaves Safari to watch it. The prompt is concrete: when registration opens. Announced June 8, ships with iOS 27 and macOS 27 this fall, the developer beta is live now. Free, built into the browser, one page per request, Apple devices only. The translation: Apple made page monitoring an operating system feature, and the category got its second platform announcement in 20 days.",
+ "Why does this matter? AI search answers the question 'what is true right now?' But prices change, policies update, deadlines pass, opportunities open and close while you're looking elsewhere. Information agents keep watching after the search ends. On the consumer side: concert and sneaker drops sell out in 90 seconds; flight fares move in a single afternoon; an SEC filing can drop a stock 15% at the open. On the business side: competitor pricing moves, regulatory changes, government tenders with seven-day windows. The category is broad. And awareness is still very low — most consumers don't know it exists.",
+ "Here's the coverage gap that creates the opportunity. Across the major I/O 2026 recaps (TechCrunch, The Verge, The Next Web, Bloomberg), AI Mode going global got the most ink. The redesigned Search box, Gemini 3.5 Flash, agentic booking, generative UI in Search all got more attention than information agents. Here's why the angle is open. Big news, small share of voice. The shift itself is arguably the biggest in Search today: AI Mode still requires a user to ask, but an information agent runs from a standing request. And almost no one connected the announcement to use-cases consumers already pay for.",
+ "Google's agents launch this summer, Apple's Notify Me this fall. Several alternatives exist already, and they group into three technologies. Search agents: Google information agents, ChatGPT Pulse at 200 dollars a month, Claude with web search and connectors, and Google Alerts, the 2003 original. Page monitoring agents: that's Visualping, 16.8 million page checks in April, 1 in 5 flagged important, free tier, premium from 10 dollars. And the new group: local page monitoring agents. Safari Notify Me this fall, and the Visualping browser extension, which has offered unlimited free local monitors in Chrome for years.",
+ "Three technologies, three different jobs. Search agents discover: best when the source list is unknown, they fan across the web, mostly on a daily cadence. Page monitoring agents verify: the user picks the exact page, checks run around the clock in the cloud, the alert shows the precise diff, and it delivers to email, Slack, Teams, or an API. Local page monitoring agents watch from the device itself: free, private, zero setup, built into the browser. The trade: they only watch while the device is awake, and alerts stay on that device. Most users will end up with two of the three. Visualping is the only player shipping in both monitoring layers, cloud and local.",
+ "Here's how each architecture works as a flow. An open-web agent takes an open question — 'startups that received Series B funding' — crawls broadly across the web, synthesizes the results into a digest, alerts you, roughly daily. Best for discovery, topic tracking, ambient awareness. A page monitor takes a specific URL — say, a competitor's pricing page — checks it on a schedule, runs a diff, and alerts the moment a specific change happens. Best for 'only tell me when this product falls below $200': pricing, status pages, regulatory updates, dockets.",
+ "Two reasons this category is becoming a market. The supply side is unchanged: less than 1% of pages change in a week, and the slice worth alerting on is exactly where missing a change is expensive. The demand side got stronger: Google named it on May 19, Apple shipped it 20 days later, Exa raised 250 million dollars at a 2.2 billion valuation in between, and Visualping processed 16.8 million page checks in April with 1 in 5 flagged important. Two platforms and a funding round inside a month.",
+ "Just to make the open-web flow concrete: a user asks a question, the agent runs across many sources, synthesizes the findings, and delivers a daily-cadence digest. The output is a brief — not a diff. You don't get to point at the exact change; you get a summary.",
+ "And here's the page monitoring version. The user picks a specific URL. Visualping checks it according to the schedule the user sets (minutes, hours, or daily). When the page changes, you get an email (or a Slack message, or a Teams ping) showing exactly what changed, highlighted on the page. The point: precision, on a known page, on a fast cadence.",
+ "And here's the local version in practice. Safari this fall: name the change while you're on the page, Safari checks it, you get a push. The Visualping extension in Chrome today: unlimited local monitors, free, with in-browser alerts. Same pattern as cloud page monitoring, scoped to the device. The difference from cloud: local watching stops when the device sleeps, and the alert stays on that device. That's why the two layers complement each other.",
+ "Five angles, updated for Apple. One: the announcement most recaps rushed past, twice; information agents got a paragraph at I/O, Notify Me got a sentence at WWDC. Two: named in May, shipped in June; the full lineage runs from Google Alerts in 2003 through Apple on June 8. Three: you don't have to wait for Google's summer or Apple's fall. Four: the three-technologies explainer. Five: a Vancouver SaaS built both monitoring layers first.",
+ "The pitch in one line. Google calls them information agents. Apple calls it Notify Me. The behavior is one standing request: tell me when it changes. The category went unnamed for 23 years, then two platforms named and shipped it in 20 days. We've been calling it the end of FOMO. Thanks, and the full kit is yours."
 ]
 </script>
 </head>
@@ -46,125 +48,101 @@
   <!-- =========================================================
        SLIDE 1 — Cover
   ========================================================== -->
-  <section data-label="01 Cover" data-om-id="94eaad2d:7" data-screen-label="01 01 Cover" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="0">
-    <div class="slide deep" data-om-id="94eaad2d:8">
-      <img src="assets/clouds-right.svg" class="cloud-bg" style="top:-40px; right:-80px; width:760px; opacity:.18; filter: brightness(0) invert(1);" alt="" data-om-id="94eaad2d:9">
-      <img src="assets/clouds-left.svg" class="cloud-bg" style="bottom:-60px; left:-100px; width:680px; opacity:.18; filter: brightness(0) invert(1);" alt="" data-om-id="94eaad2d:10">
-
-      <div style="display:flex; align-items:center; gap:18px;" data-om-id="94eaad2d:11">
-        <img src="assets/visualping-logo-white.svg" alt="Visualping" style="height:32px;" data-om-id="94eaad2d:12">
+  <section data-deck-slide="0" data-label="01 Cover">
+  <div class="slide deep">
+    <img src="assets/clouds-right.svg" class="cloud-bg" style="top:-40px; right:-80px; width:760px; opacity:.18; filter: brightness(0) invert(1);" alt="">
+    <img src="assets/clouds-left.svg" class="cloud-bg" style="bottom:-60px; left:-100px; width:680px; opacity:.18; filter: brightness(0) invert(1);" alt="">
+    <div style="display:flex; align-items:center; gap:18px;">
+      <img src="assets/visualping-logo-white.svg" alt="Visualping" style="height:32px;">
+    </div>
+    <div style="margin-top: 150px; max-width: 1500px;">
+      <div class="eyebrow" style="margin-bottom: 36px; color: #8FB8FF;">
+        <span class="dot" style="vertical-align: 2px; margin-right: 14px;"></span> Press briefing · Updated June 10, 2026
       </div>
-
-      <div style="margin-top: 160px; max-width: 1400px;" data-om-id="94eaad2d:13">
-        <div class="eyebrow" style="margin-bottom: 36px; color: #8FB8FF;" data-om-id="94eaad2d:14">
-          <span class="dot" style="vertical-align: 2px; margin-right: 14px;" data-om-id="94eaad2d:15"></span>
-          Press briefing · May 21, 2026
-        </div>
-        <h1 class="title" style="font-size: 132px; line-height: 1.02; letter-spacing: -0.035em; color: #fff;" data-om-id="94eaad2d:16">
-          <span data-om-id="94eaad2d:17">The Google I/O story</span><br data-om-id="94eaad2d:18">
-          <span style="color: var(--vp-blue-500);" data-om-id="94eaad2d:19">that got buried.</span>
-        </h1>
-        <p class="lead" style="margin-top: 56px; font-size: 32px; line-height:1.45; max-width: 1280px; color: rgba(255,255,255,.85);" data-om-id="94eaad2d:20">
-          <span data-om-id="94eaad2d:21">Last week Google announced “information agents”: AI agents that monitor the web for changes tied to a user’s query.</span>
-          <span style="color: rgba(255,255,255,.55);" data-om-id="94eaad2d:22"> Coverage focused on AI Mode and the redesigned Search box. The agents mostly got a paragraph.</span>
-        </p>
+      <h1 class="title" style="font-size: 132px; line-height: 1.02; letter-spacing: -0.035em; color: #fff;">
+        <span>Google named it.</span><br>
+        <span style="color: var(--vp-blue-500);">Apple shipped it.</span>
+      </h1>
+      <p class="lead" style="margin-top: 56px; font-size: 32px; line-height:1.45; max-width: 1380px; color: rgba(255,255,255,.85);">
+        <span>Information agents at Google I/O (May 19). Notify Me in Safari at WWDC (June 8).</span>
+        <span style="color: rgba(255,255,255,.55);"> Two announcements in 20 days put a name and an OS feature on the work of watching the web.</span>
+      </p>
+    </div>
+    <div style="position:absolute; left: var(--pad-x); bottom: 80px; right: var(--pad-x); display:flex; justify-content:space-between; align-items:flex-end;">
+      <div style="font-size: 22px; color: rgba(255,255,255,.65); max-width: 1020px; line-height: 1.5;">
+        A briefing for journalists: both announcements, the three technologies underneath,<br>
+        and which alternatives consumers can use today.
       </div>
+      <div style="font-size: 18px; color: rgba(255,255,255,.5); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;">
+        01 / 15
+      </div>
+    </div>
+  </div>
+</section>
 
-      <div style="position:absolute; left: var(--pad-x); bottom: 80px; right: var(--pad-x); display:flex; justify-content:space-between; align-items:flex-end;" data-om-id="94eaad2d:23">
-        <div style="font-size: 22px; color: rgba(255,255,255,.65); max-width: 980px; line-height: 1.5;" data-om-id="94eaad2d:24">
-          A briefing for journalists: what Google announced, why it matters,<br data-om-id="94eaad2d:25">
-          and which alternatives consumers can use today.
+<section data-deck-slide="1" data-label="02 Two Announcements">
+  <div class="slide">
+    <div class="eyebrow" style="margin-bottom: 40px;">Two announcements, 20 days apart</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 56px; flex: 1; min-height: 0;">
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        <div style="display:flex; align-items:center; gap: 14px;">
+          <span class="tag tag-blue">Google · I/O 2026</span>
+          <span style="font-size: 18px; color: var(--ink-4);">May 19, 2026</span>
         </div>
-        <div style="font-size: 18px; color: rgba(255,255,255,.5); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;" data-om-id="94eaad2d:26">
-          01 / 13
+        <div>
+          <div style="font-size: 110px; line-height: 0.7; color: var(--vp-blue-200); font-weight: 700; height: 56px;">&ldquo;</div>
+          <h2 class="title" style="font-size: 52px; max-width: 100%; margin-top: 6px;">We are entering the era of <span style="color: var(--vp-blue-500);">Search agents</span>.</h2>
+          <div style="font-size: 19px; color: var(--ink-3); margin-top: 14px;">Elizabeth &ldquo;Liz&rdquo; Reid, VP of Search &middot; I/O keynote</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: auto;">
+          <a class="card-flat" style="text-decoration:none; color:inherit; padding: 24px; gap: 12px;" href="https://youtube.com/live/wYSncx9zLIU?t=2856">
+      <div class="vp-overline" style="font-size: 13px; color: var(--ink-4); line-height: 1.4;">YouTube · timestamped</div>
+      <div style="font-size: 21px; font-weight: 700; line-height: 1.25;">Watch Reid introduce information agents</div>
+      <div style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-3); word-break: break-all;">youtube.com/live/wYSncx9zLIU?t=2856</div>
+      <div style="display:flex; align-items:center; gap: 8px; color: var(--vp-blue-500); font-weight: 700; font-size: 14px;">OPEN <span>&rarr;</span> <span style="color: var(--ink-3); font-weight: 500;">~ 46:56</span></div>
+    </a>
+          <a class="card-flat" style="text-decoration:none; color:inherit; padding: 24px; gap: 12px;" href="https://blog.google/products/search/search-io-2026/#search-agents">
+      <div class="vp-overline" style="font-size: 13px; color: var(--ink-4); line-height: 1.4;">blog.google · official post</div>
+      <div style="font-size: 21px; font-weight: 700; line-height: 1.25;">Read the announcement</div>
+      <div style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-3); word-break: break-all;">blog.google/.../#search-agents</div>
+      <div style="display:flex; align-items:center; gap: 8px; color: var(--vp-blue-500); font-weight: 700; font-size: 14px;">OPEN <span>&rarr;</span> <span style="color: var(--ink-3); font-weight: 500;">Deep-link anchor</span></div>
+    </a>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 24px; border-left: 1px solid var(--rule); padding-left: 56px;">
+        <div style="display:flex; align-items:center; gap: 14px;">
+          <span class="tag tag-gray">Apple · WWDC 2026</span>
+          <span style="font-size: 18px; color: var(--ink-4);">June 8, 2026</span>
+        </div>
+        <div>
+          <div style="font-size: 110px; line-height: 0.7; color: var(--vp-blue-200); font-weight: 700; height: 56px;">&ldquo;</div>
+          <h2 class="title" style="font-size: 52px; max-width: 100%; margin-top: 6px;">Sometimes we keep tabs open because we&rsquo;re <span style="color: var(--vp-blue-500);">waiting</span> for something.</h2>
+          <div style="font-size: 19px; color: var(--ink-3); margin-top: 14px;">Apple WWDC 2026 keynote &middot; Safari segment</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: auto;">
+          <a class="card-flat" style="text-decoration:none; color:inherit; padding: 24px; gap: 12px;" href="https://www.apple.com/apple-events/">
+      <div class="vp-overline" style="font-size: 13px; color: var(--ink-4); line-height: 1.4;">Apple Events · keynote</div>
+      <div style="font-size: 21px; font-weight: 700; line-height: 1.25;">Watch the Notify Me introduction</div>
+      <div style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-3); word-break: break-all;">apple.com/apple-events</div>
+      <div style="display:flex; align-items:center; gap: 8px; color: var(--vp-blue-500); font-weight: 700; font-size: 14px;">OPEN <span>&rarr;</span> <span style="color: var(--ink-3); font-weight: 500;">timestamp TK</span></div>
+    </a>
+          <a class="card-flat" style="text-decoration:none; color:inherit; padding: 24px; gap: 12px;" href="https://www.macrumors.com/2026/06/08/safari-monitor-webpage-notify-updates/">
+      <div class="vp-overline" style="font-size: 13px; color: var(--ink-4); line-height: 1.4;">MacRumors · June 8, 2026</div>
+      <div style="font-size: 21px; font-weight: 700; line-height: 1.25;">Safari can monitor a webpage and notify you</div>
+      <div style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-3); word-break: break-all;">macrumors.com/2026/06/08/safari-monitor-webpage-notify-updates</div>
+      <div style="display:flex; align-items:center; gap: 8px; color: var(--vp-blue-500); font-weight: 700; font-size: 14px;">OPEN <span>&rarr;</span></div>
+    </a>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- =========================================================
-       SLIDE 2 — Watch and read
-  ========================================================== -->
-  <section data-label="02 Primary Sources" data-om-id="94eaad2d:27" data-screen-label="02 02 Primary Sources" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="1">
-    <div class="slide" data-om-id="94eaad2d:28">
-      <div class="eyebrow" style="margin-bottom: 32px;" data-om-id="94eaad2d:29">Watch and read the announcement</div>
-
-      <div style="display: grid; grid-template-columns: 520px 1fr; gap: 56px; flex: 1;" data-om-id="94eaad2d:30">
-
-        <!-- Portrait column -->
-        <div style="display: flex; flex-direction: column; gap: 20px;" data-om-id="94eaad2d:31">
-          <div style="width: 100%; height: 620px; border-radius: 16px; overflow: hidden; background: var(--vp-gray-200);" data-om-id="94eaad2d:32">
-            <img src="assets/liz-reid-keynote.png" alt="Liz Reid presenting information agents at Google I/O 2026" style="width: 100%; height: 100%; object-fit: cover; object-position: 72% center; display: block;" data-om-id="94eaad2d:33">
-          </div>
-          <div data-om-id="94eaad2d:34">
-            <div style="font-size: 28px; font-weight: 700; line-height: 1.2;" data-om-id="94eaad2d:35">Elizabeth “Liz” Reid</div>
-            <div style="font-size: 20px; color: var(--ink-3); margin-top: 4px; line-height: 1.4;" data-om-id="94eaad2d:36">VP, Google Search</div>
-            <div style="font-size: 18px; color: var(--ink-4); margin-top: 10px;" data-om-id="94eaad2d:37">I/O 2026 keynote · May 19, 2026</div>
-          </div>
-        </div>
-
-        <!-- Quote + sources -->
-        <div style="display: flex; flex-direction: column; gap: 28px;" data-om-id="94eaad2d:38">
-          <div data-om-id="94eaad2d:39">
-            <div style="font-size: 140px; line-height: 0.7; color: var(--vp-blue-200); font-weight: 700; height: 70px;" data-om-id="94eaad2d:40">“</div>
-            <h2 class="title" style="font-size: 60px; max-width: 100%; margin-top: 8px;" data-om-id="94eaad2d:41">
-              We are entering the era of <span style="color: var(--vp-blue-500);" data-om-id="94eaad2d:42">Search agents</span>.
-            </h2>
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 4px;" data-om-id="94eaad2d:43">
-            <!-- YouTube source card -->
-            <a class="card-flat" style="text-decoration:none; color:inherit; padding: 26px; gap: 14px;" href="https://youtube.com/live/wYSncx9zLIU?t=2856" data-om-id="94eaad2d:44">
-              <div style="display:flex; justify-content: space-between; align-items: flex-start; gap: 12px;" data-om-id="94eaad2d:45">
-                <div class="vp-overline" style="font-size: 13px; color: var(--ink-4); line-height: 1.4;" data-om-id="94eaad2d:46">YouTube · timestamped</div>
-                <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--vp-red-500); display:flex; align-items:center; justify-content:center; flex-shrink:0;" data-om-id="94eaad2d:47">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" data-om-id="94eaad2d:48"><path d="M8 5v14l11-7z" data-om-id="94eaad2d:49"></path></svg>
-                </div>
-              </div>
-              <div style="font-size: 22px; font-weight: 700; line-height: 1.2;" data-om-id="94eaad2d:50">
-                Watch Liz Reid introduce<br data-om-id="94eaad2d:51">information agents
-              </div>
-              <div style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-3); word-break: break-all;" data-om-id="94eaad2d:52">youtube.com/live/wYSncx9zLIU?t=2856</div>
-              <div style="display:flex; align-items:center; gap: 8px; color: var(--vp-blue-500); font-weight: 700; font-size: 14px;" data-om-id="94eaad2d:53">
-                OPEN <span data-om-id="94eaad2d:54">→</span>
-                <span style="color: var(--ink-3); font-weight: 500;" data-om-id="94eaad2d:55">~ 46:56</span>
-              </div>
-            </a>
-
-            <!-- blog.google source card -->
-            <a class="card-flat" style="text-decoration:none; color:inherit; padding: 26px; gap: 14px;" href="https://blog.google/products/search/search-io-2026/#search-agents" data-om-id="94eaad2d:56">
-              <div style="display:flex; justify-content: space-between; align-items: flex-start; gap: 12px;" data-om-id="94eaad2d:57">
-                <div class="vp-overline" style="font-size: 13px; color: var(--ink-4); line-height: 1.4;" data-om-id="94eaad2d:58">blog.google · official post</div>
-                <div style="width: 40px; height: 40px; border-radius: 8px; background: var(--vp-blue-500); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:#fff; font-weight: 800; font-size: 20px;" data-om-id="94eaad2d:59">G</div>
-              </div>
-              <div style="font-size: 22px; font-weight: 700; line-height: 1.2;" data-om-id="94eaad2d:60">
-                Read the announcement
-              </div>
-              <div style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-3); word-break: break-all;" data-om-id="94eaad2d:61">blog.google/.../#search-agents</div>
-              <div style="display:flex; align-items:center; gap: 8px; color: var(--vp-blue-500); font-weight: 700; font-size: 14px;" data-om-id="94eaad2d:62">
-                OPEN <span data-om-id="94eaad2d:63">→</span>
-                <span style="color: var(--ink-3); font-weight: 500;" data-om-id="94eaad2d:64">Deep-link anchor</span>
-              </div>
-            </a>
-          </div>
-
-          <div style="margin-top: auto; padding-top: 20px; font-size: 19px; color: var(--ink-3); line-height: 1.5; border-top: 1px solid var(--rule);" data-om-id="94eaad2d:65">
-            <strong style="color: var(--ink);" data-om-id="94eaad2d:66">Primary sources.</strong> Everything in this briefing is grounded in the keynote and the official blog post above. Both links are in the press kit.
-          </div>
-        </div>
-      </div>
-
-      <div class="slide-foot" data-om-id="94eaad2d:67">
-        <div class="mark" data-om-id="94eaad2d:68"><img src="assets/visualping-mark.svg" alt="" data-om-id="94eaad2d:69"><span data-om-id="94eaad2d:70">Visualping press materials</span></div>
-        <div data-om-id="94eaad2d:71">Re: Google I/O 2026 information agents · 02 / 13</div>
-      </div>
+    <div style="margin-top: 28px; padding-top: 18px; font-size: 19px; color: var(--ink-3); line-height: 1.5; border-top: 1px solid var(--rule);">
+      <strong style="color: var(--ink);">Primary sources.</strong> Everything in this briefing is grounded in the two keynotes and the posts above. All four links are in the press kit.
     </div>
-  </section>
+    <div class="slide-foot"> <div class="mark"><img src="assets/visualping-mark.svg" alt=""><span>Visualping press materials</span></div> <div>Re: Google I/O + Apple WWDC 2026 · 02 / 15</div> </div>
+  </div>
+</section>
 
-  <!-- =========================================================
-       SLIDE 3 — What Google announced
-  ========================================================== -->
-  <section data-label="03 What Google Announced" data-om-id="94eaad2d:72" data-screen-label="03 03 What Google Announced" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="2">
+<section data-deck-slide="2" data-label="03 What Google Announced" data-om-id="94eaad2d:72" data-screen-label="03 03 What Google Announced" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text">
     <div class="slide" data-om-id="94eaad2d:73">
       <div class="s-header" data-om-id="94eaad2d:74">
         <div class="eyebrow" data-om-id="94eaad2d:75">What Google announced, May 19</div>
@@ -217,15 +195,46 @@
 
       <div class="slide-foot" data-om-id="94eaad2d:103">
         <div class="mark" data-om-id="94eaad2d:104"><img src="assets/visualping-mark.svg" alt="" data-om-id="94eaad2d:105"><span data-om-id="94eaad2d:106">Visualping press materials</span></div>
-        <div data-om-id="94eaad2d:107">Re: Google I/O 2026 information agents · 03 / 13</div>
+        <div data-om-id="94eaad2d:107">Re: Google I/O + Apple WWDC 2026 · 03 / 15</div>
       </div>
     </div>
   </section>
 
-  <!-- =========================================================
-       SLIDE 4 — Why information agents matter (6 use cases)
-  ========================================================== -->
-  <section data-label="04 Why It Matters" data-om-id="94eaad2d:108" data-screen-label="04 04 Why It Matters" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="3">
+<section data-deck-slide="3" data-label="04 What Apple Announced">
+  <div class="slide">
+    <div class="s-header" style="margin-bottom: 40px;">
+      <div class="eyebrow">What Apple announced, June 8</div>
+      <h2 class="title">Notify Me: page monitoring, built into <span style="color: var(--vp-blue-500);">Safari</span>.</h2>
+      <p class="lead">A user names the change they are waiting for and leaves Safari to watch the page. The prompt is concrete: &ldquo;when registration opens.&rdquo;</p>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 880px; gap: 60px; flex: 1; min-height: 0;">
+      <div style="display: flex; flex-direction: column; gap: 22px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+          <div class="card-flat" style="padding: 20px 22px; gap: 6px;"><div style="font-size: 14px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-4);">Announced</div><div style="font-size: 22px; font-weight: 700;">June 8, 2026</div></div>
+          <div class="card-flat" style="padding: 20px 22px; gap: 6px;"><div style="font-size: 14px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-4);">Ships in</div><div style="font-size: 22px; font-weight: 700;">iOS 27 / macOS 27, this fall</div></div>
+          <div class="card-flat" style="padding: 20px 22px; gap: 6px;"><div style="font-size: 14px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-4);">Developer beta</div><div style="font-size: 22px; font-weight: 700;">Live now</div></div>
+        </div>
+        <ul style="margin: 8px 0 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 16px; font-size: 24px; line-height: 1.45; color: var(--ink-2);">
+          <li style="display:flex; gap: 14px;"><span style="color: var(--vp-blue-500); font-weight: 800;">&bull;</span>Safari keeps checking after the user leaves. The alert arrives as a push.</li>
+          <li style="display:flex; gap: 14px;"><span style="color: var(--vp-blue-500); font-weight: 800;">&bull;</span>Scope at launch: one page per request, Safari on Apple devices.</li>
+          <li style="display:flex; gap: 14px;"><span style="color: var(--vp-blue-500); font-weight: 800;">&bull;</span>Free, built into the browser. No account, no setup.</li>
+        </ul>
+        <div style="margin-top: auto; background: var(--vp-blue-50); border-left: 5px solid var(--vp-blue-500); border-radius: 0 12px 12px 0; padding: 24px 28px; font-size: 22px; line-height: 1.45; color: var(--ink-2);">
+          <strong style="color: var(--ink);">Translation:</strong> Apple made page monitoring an operating system feature. The category got its second platform announcement in 20 days.
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div style="height: 540px; border-radius: 16px; overflow: hidden; border: 1px solid var(--rule); box-shadow: var(--shadow-card); background: var(--vp-gray-200);">
+          <img src="assets/apple-notify-me-macbook.png" alt="Safari Notify Me dialog on a MacBook, on a page that says registration for August will open soon" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;">
+        </div>
+        <div style="font-size: 15px; color: var(--ink-4); margin-top: 12px;">Image: Apple / WWDC 2026</div>
+      </div>
+    </div>
+    <div class="slide-foot"> <div class="mark"><img src="assets/visualping-mark.svg" alt=""><span>Visualping press materials</span></div> <div>Re: Google I/O + Apple WWDC 2026 · 04 / 15</div> </div>
+  </div>
+</section>
+
+<section data-deck-slide="4" data-label="05 Why It Matters" data-om-id="94eaad2d:108" data-screen-label="04 04 Why It Matters" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text">
     <div class="slide" data-om-id="94eaad2d:109">
       <div class="s-header" data-om-id="94eaad2d:110">
         <div class="eyebrow" data-om-id="94eaad2d:111">Why information agents matter</div>
@@ -336,15 +345,12 @@
 
       <div class="slide-foot" data-om-id="94eaad2d:190">
         <div class="mark" data-om-id="94eaad2d:191"><img src="assets/visualping-mark.svg" alt="" data-om-id="94eaad2d:192"><span data-om-id="94eaad2d:193">Visualping press materials</span></div>
-        <div data-om-id="94eaad2d:194">Re: Google I/O 2026 information agents · 04 / 13</div>
+        <div data-om-id="94eaad2d:194">Re: Google I/O + Apple WWDC 2026 · 05 / 15</div>
       </div>
     </div>
   </section>
 
-  <!-- =========================================================
-       SLIDE 5 — The coverage gap (bar chart)
-  ========================================================== -->
-  <section data-label="05 The Coverage Gap" data-om-id="94eaad2d:195" data-screen-label="05 05 The Coverage Gap" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="4">
+<section data-deck-slide="5" data-label="06 The Coverage Gap" data-om-id="94eaad2d:195" data-screen-label="05 05 The Coverage Gap" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text">
     <div class="slide" data-om-id="94eaad2d:196">
       <div class="s-header" data-om-id="94eaad2d:197">
         <div class="eyebrow" data-om-id="94eaad2d:198">The coverage gap</div>
@@ -456,34 +462,31 @@
 
       <div class="slide-foot" data-om-id="94eaad2d:262">
         <div class="mark" data-om-id="94eaad2d:263"><img src="assets/visualping-mark.svg" alt="" data-om-id="94eaad2d:264"><span data-om-id="94eaad2d:265">Visualping press materials</span></div>
-        <div data-om-id="94eaad2d:266">Re: Google I/O 2026 information agents · 05 / 13</div>
+        <div data-om-id="94eaad2d:266">Re: Google I/O + Apple WWDC 2026 · 06 / 15</div>
       </div>
     </div>
   </section>
 
-  <!-- =========================================================
-       SLIDE 6 — Alternatives consumers can use today
-  ========================================================== -->
-  <section data-label="06 Alternatives Today" data-om-id="94eaad2d:267" data-screen-label="06 06 Alternatives Today" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="5">
+<section data-deck-slide="6" data-label="07 Alternatives Today" data-om-id="94eaad2d:267" data-screen-label="06 06 Alternatives Today" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text">
     <div class="slide" data-om-id="94eaad2d:268">
-      <div class="s-header" style="margin-bottom: 36px;" data-om-id="94eaad2d:269">
+      <div class="s-header" style="margin-bottom: 20px; gap: 12px;" data-om-id="94eaad2d:269">
         <div class="eyebrow" data-om-id="94eaad2d:270">What consumers can use today</div>
-        <h2 class="title" data-om-id="94eaad2d:271">
-          Google’s agents launch this summer. <br data-om-id="94eaad2d:272">
+        <h2 class="title" style="font-size: 52px;" data-om-id="94eaad2d:271">
+          Google ships this summer. Apple ships this fall. <br data-om-id="94eaad2d:272">
           <span class="light" data-om-id="94eaad2d:273">Several alternatives already exist.</span>
         </h2>
       </div>
 
       <!-- Open web row -->
       <div style="display:flex; align-items: center; gap: 16px; margin-bottom: 16px;" data-om-id="94eaad2d:274">
-        <div style="font-size: 17px; color: var(--ink-4); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700;" data-om-id="94eaad2d:275">Open web agents</div>
+        <div style="font-size: 17px; color: var(--ink-4); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700;" data-om-id="94eaad2d:275">Search agents</div>
         <hr class="rule" style="flex: 1;" data-om-id="94eaad2d:276">
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 32px;" data-om-id="94eaad2d:277">
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 18px;" data-om-id="94eaad2d:277">
 
         <!-- Google Information Agents -->
-        <div class="card-flat" style="padding: 24px; gap: 14px; border-color: var(--vp-blue-500); border-width: 2px; min-height: 280px;" data-om-id="94eaad2d:278">
+        <div class="card-flat" style="padding: 18px 20px; gap: 10px; border-color: var(--vp-blue-500); border-width: 2px; " data-om-id="94eaad2d:278">
           <div style="display:flex; align-items: center; justify-content: space-between; height: 36px;" data-om-id="94eaad2d:279">
             <!-- Google "G" multicolor -->
             <svg width="32" height="32" viewBox="0 0 48 48" aria-label="Google" data-om-id="94eaad2d:280">
@@ -495,14 +498,14 @@
             <span class="tag tag-blue" style="font-size: 11px;" data-om-id="94eaad2d:285">New · Summer 2026</span>
           </div>
           <div style="font-size: 22px; font-weight: 700; line-height: 1.2;" data-om-id="94eaad2d:286">Google<br data-om-id="94eaad2d:287">Information Agents</div>
-          <div style="font-size: 16px; color: var(--ink-3); line-height: 1.45; flex: 1;" data-om-id="94eaad2d:288">AI monitoring across the web using Search AI.</div>
+          <div style="font-size: 15px; color: var(--ink-3); line-height: 1.4; flex: 1;" data-om-id="94eaad2d:288">AI monitoring across the web using Search AI.</div>
           <hr class="rule" style="margin: 4px 0;" data-om-id="94eaad2d:289">
           <div style="font-size: 14px; color: var(--ink-4);" data-om-id="94eaad2d:290">AI Pro &amp; Ultra</div>
           <div style="font-size: 18px; font-weight: 700; color: var(--vp-blue-700);" data-om-id="94eaad2d:291">$20 – $200/mo</div>
         </div>
 
         <!-- ChatGPT Pulse -->
-        <div class="card-flat" style="padding: 24px; gap: 14px; min-height: 280px;" data-om-id="94eaad2d:292">
+        <div class="card-flat" style="padding: 18px 20px; gap: 10px; " data-om-id="94eaad2d:292">
           <div style="display:flex; align-items: center; justify-content: space-between; height: 36px;" data-om-id="94eaad2d:293">
             <!-- OpenAI petal -->
             <svg width="32" height="32" viewBox="0 0 32 32" aria-label="ChatGPT" data-om-id="94eaad2d:294">
@@ -511,31 +514,26 @@
             <span style="font-size: 12px; color: var(--ink-4); font-weight: 600;" data-om-id="94eaad2d:296">Sept 2025</span>
           </div>
           <div style="font-size: 22px; font-weight: 700; line-height: 1.2;" data-om-id="94eaad2d:297">ChatGPT<br data-om-id="94eaad2d:298">Pulse</div>
-          <div style="font-size: 16px; color: var(--ink-3); line-height: 1.45; flex: 1;" data-om-id="94eaad2d:299">Asynchronous research delivered as morning briefs.</div>
+          <div style="font-size: 15px; color: var(--ink-3); line-height: 1.4; flex: 1;" data-om-id="94eaad2d:299">Asynchronous research delivered as morning briefs.</div>
           <hr class="rule" style="margin: 4px 0;" data-om-id="94eaad2d:300">
           <div style="font-size: 14px; color: var(--ink-4);" data-om-id="94eaad2d:301">ChatGPT Pro preview</div>
           <div style="font-size: 18px; font-weight: 700;" data-om-id="94eaad2d:302">$200/mo</div>
         </div>
 
-        <!-- Exa Monitors -->
-        <div class="card-flat" style="padding: 24px; gap: 14px; min-height: 280px;" data-om-id="94eaad2d:303">
-          <div style="display:flex; align-items: center; justify-content: space-between; height: 36px;" data-om-id="94eaad2d:304">
-            <!-- Exa wordmark -->
-            <div style="font-family: var(--font-sans); font-weight: 800; font-size: 22px; letter-spacing: -0.02em; color: var(--vp-gray-900); display:flex; align-items:center; gap: 6px;" data-om-id="94eaad2d:305">
-              <svg width="22" height="22" viewBox="0 0 24 24" data-om-id="94eaad2d:306"><circle cx="12" cy="12" r="10" fill="none" stroke="#1a1a1a" stroke-width="2" data-om-id="94eaad2d:307"></circle><circle cx="12" cy="12" r="3.5" fill="#1a1a1a" data-om-id="94eaad2d:308"></circle></svg>
-              <span data-om-id="94eaad2d:309">exa</span>
-            </div>
-            <span style="font-size: 12px; color: var(--ink-4); font-weight: 600;" data-om-id="94eaad2d:310">$250M, May 2026</span>
-          </div>
-          <div style="font-size: 22px; font-weight: 700; line-height: 1.2;" data-om-id="94eaad2d:311">Exa<br data-om-id="94eaad2d:312">Monitors</div>
-          <div style="font-size: 16px; color: var(--ink-3); line-height: 1.45; flex: 1;" data-om-id="94eaad2d:313">API for developers to schedule recurring web searches via webhook.</div>
-          <hr class="rule" style="margin: 4px 0;" data-om-id="94eaad2d:314">
-          <div style="font-size: 14px; color: var(--ink-4);" data-om-id="94eaad2d:315">Developer API</div>
-          <div style="font-size: 18px; font-weight: 700;" data-om-id="94eaad2d:316">From $49/mo</div>
-        </div>
-
-        <!-- Google Alerts -->
-        <div class="card-flat" style="padding: 24px; gap: 14px; min-height: 280px;" data-om-id="94eaad2d:317">
+        <!-- Claude -->
+<div class="card-flat" style="padding: 18px 20px; gap: 10px; ">
+  <div style="display:flex; align-items: center; justify-content: space-between; height: 36px;">
+    <svg width="30" height="30" viewBox="0 0 24 24" aria-label="Claude"><path fill="#D97757" d="M12 2l1.8 6.2L20 6.4l-4.6 4.4 5.4 3.2-6.4.4L15.6 21 12 15.8 8.4 21l1.2-6.6-6.4-.4 5.4-3.2L4 6.4l6.2 1.8z"></path></svg>
+    <span style="font-size: 12px; color: var(--ink-4); font-weight: 600;">Free + paid</span>
+  </div>
+  <div style="font-size: 22px; font-weight: 700; line-height: 1.2;">Claude</div>
+  <div style="font-size: 15px; color: var(--ink-3); line-height: 1.4; flex: 1;">Searches the web on request; connectors bring monitoring tools into chat.</div>
+  <hr class="rule" style="margin: 4px 0;">
+  <div style="font-size: 14px; color: var(--ink-4);">Anthropic</div>
+  <div style="font-size: 18px; font-weight: 700;">$0 &ndash; $20+/mo</div>
+</div>
+<!-- Google Alerts -->
+        <div class="card-flat" style="padding: 18px 20px; gap: 10px; " data-om-id="94eaad2d:317">
           <div style="display:flex; align-items: center; justify-content: space-between; height: 36px;" data-om-id="94eaad2d:318">
             <!-- Google Alerts bell -->
             <svg width="32" height="32" viewBox="0 0 48 48" aria-label="Google Alerts" data-om-id="94eaad2d:319">
@@ -547,7 +545,7 @@
             <span style="font-size: 12px; color: var(--ink-4); font-weight: 600;" data-om-id="94eaad2d:324">Since 2003</span>
           </div>
           <div style="font-size: 22px; font-weight: 700; line-height: 1.2;" data-om-id="94eaad2d:325">Google<br data-om-id="94eaad2d:326">Alerts</div>
-          <div style="font-size: 16px; color: var(--ink-3); line-height: 1.45; flex: 1;" data-om-id="94eaad2d:327">Email when Google indexes new content matching a keyword.</div>
+          <div style="font-size: 15px; color: var(--ink-3); line-height: 1.4; flex: 1;" data-om-id="94eaad2d:327">Email when Google indexes new content matching a keyword.</div>
           <hr class="rule" style="margin: 4px 0;" data-om-id="94eaad2d:328">
           <div style="font-size: 14px; color: var(--ink-4);" data-om-id="94eaad2d:329">The original</div>
           <div style="font-size: 18px; font-weight: 700;" data-om-id="94eaad2d:330">Free</div>
@@ -560,13 +558,13 @@
         <hr class="rule" style="flex: 1;" data-om-id="94eaad2d:333">
       </div>
 
-      <div class="card" style="padding: 28px 36px; gap: 28px; flex-direction: row; align-items: center;" data-om-id="94eaad2d:334">
+      <div class="card" style="padding: 18px 36px; gap: 28px; flex-direction: row; align-items: center;" data-om-id="94eaad2d:334">
         <img src="assets/visualping-logo.svg" alt="Visualping" style="height: 36px; width: auto; flex-shrink: 0;" data-om-id="94eaad2d:335">
 
         <hr style="border:0; width:1px; height: 56px; background: var(--rule);" data-om-id="94eaad2d:336">
 
         <div style="flex: 1; font-size: 19px; color: var(--ink-2); line-height: 1.4;" data-om-id="94eaad2d:337">
-          Watch the web pages <strong data-om-id="94eaad2d:338">you</strong> want, not the entire web.<br data-om-id="94eaad2d:339">
+          Watch the exact pages that matter, from the cloud.<br data-om-id="94eaad2d:339">
           Page-level monitoring with precise visual diffs and frequent checks.
         </div>
 
@@ -590,99 +588,111 @@
         </div>
       </div>
 
-      <div class="slide-foot" data-om-id="94eaad2d:353">
+      <div style="display:flex; align-items: center; gap: 16px; margin: 18px 0 12px;">
+  <div style="font-size: 17px; color: var(--ink-4); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700;">Local page monitoring agents</div>
+  <hr class="rule" style="flex: 1;">
+</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+  <div class="card-flat" style="padding: 14px 28px; gap: 4px; flex-direction: row; align-items: center; justify-content: space-between;">
+    <div>
+      <div style="font-size: 21px; font-weight: 700;">Safari Notify Me</div>
+      <div style="font-size: 16px; color: var(--ink-3); margin-top: 4px;">Page alerts built into the browser. Announced June 8, ships this fall.</div>
+    </div>
+    <div style="text-align: right; flex-shrink: 0; margin-left: 20px;">
+      <div style="font-size: 14px; color: var(--ink-4);">iOS 27 / macOS 27</div>
+      <div style="font-size: 18px; font-weight: 700;">Free</div>
+    </div>
+  </div>
+  <div class="card-flat" style="padding: 14px 28px; gap: 4px; flex-direction: row; align-items: center; justify-content: space-between; border-color: var(--vp-blue-500);">
+    <div>
+      <div style="font-size: 21px; font-weight: 700;">Visualping browser extension</div>
+      <div style="font-size: 16px; color: var(--ink-3); margin-top: 4px;">Unlimited local monitors in Chrome, with in-browser alerts. Live for years.</div>
+    </div>
+    <div style="text-align: right; flex-shrink: 0; margin-left: 20px;">
+      <div style="font-size: 14px; color: var(--ink-4);">Chrome</div>
+      <div style="font-size: 18px; font-weight: 700;">Free</div>
+    </div>
+  </div>
+</div>
+<div class="slide-foot" data-om-id="94eaad2d:353">
         <div class="mark" data-om-id="94eaad2d:354"><img src="assets/visualping-mark.svg" alt="" data-om-id="94eaad2d:355"><span data-om-id="94eaad2d:356">Visualping press materials</span></div>
-        <div data-om-id="94eaad2d:357">Re: Google I/O 2026 information agents · 06 / 13</div>
+        <div data-om-id="94eaad2d:357">Re: Google I/O + Apple WWDC 2026 · 07 / 15</div>
       </div>
     </div>
   </section>
 
-  <!-- =========================================================
-       SLIDE 7 — Two architectures, different jobs
-  ========================================================== -->
-  <section data-label="07 Two Architectures" data-om-id="94eaad2d:358" data-screen-label="07 07 Two Architectures" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="6">
-    <div class="slide" data-om-id="94eaad2d:359">
-      <div class="s-header" data-om-id="94eaad2d:360">
-        <div class="eyebrow" data-om-id="94eaad2d:361">Two architectures, different jobs</div>
-        <h2 class="title" data-om-id="94eaad2d:362">
-          Open-web agents discover sources. <br data-om-id="94eaad2d:363">
-          <span style="color: var(--vp-blue-500);" data-om-id="94eaad2d:364">Page monitoring agents verify changes.</span>
-        </h2>
-      </div>
-
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; flex: 1;" data-om-id="94eaad2d:365">
-
-        <!-- Open web col -->
-        <div class="card-flat" style="padding: 40px; gap: 24px; background: var(--vp-gray-100); border: none;" data-om-id="94eaad2d:366">
-          <div data-om-id="94eaad2d:367">
-            <div style="font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-4); font-weight: 700;" data-om-id="94eaad2d:368">Open-web agents</div>
-            <div style="font-size: 22px; color: var(--ink-3); margin-top: 8px;" data-om-id="94eaad2d:369">Google, ChatGPT, Exa</div>
-          </div>
-          <div style="font-size: 28px; font-weight: 700; line-height: 1.3;" data-om-id="94eaad2d:370">Best when the source list is unknown.</div>
-          <hr class="rule" data-om-id="94eaad2d:371">
-
-          <div data-om-id="94eaad2d:372">
-            <div style="font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--vp-green-700); font-weight: 700; margin-bottom: 14px;" data-om-id="94eaad2d:373">Pros</div>
-            <ul style="margin: 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 21px; color: var(--ink-2);" data-om-id="94eaad2d:374">
-              <li style="display:flex; gap: 12px;" data-om-id="94eaad2d:375"><span style="color: var(--vp-green-500); font-weight: 800;" data-om-id="94eaad2d:376">+</span>Finds sources you might miss</li>
-              <li style="display:flex; gap: 12px;" data-om-id="94eaad2d:377"><span style="color: var(--vp-green-500); font-weight: 800;" data-om-id="94eaad2d:378">+</span>Tracks a broad topic across many sources</li>
-              <li style="display:flex; gap: 12px;" data-om-id="94eaad2d:379"><span style="color: var(--vp-green-500); font-weight: 800;" data-om-id="94eaad2d:380">+</span>Starts from a topic, not a URL list</li>
-            </ul>
-          </div>
-
-          <div data-om-id="94eaad2d:381">
-            <div style="font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--vp-red-700); font-weight: 700; margin-bottom: 14px;" data-om-id="94eaad2d:382">Cons</div>
-            <ul style="margin: 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 21px; color: var(--ink-2);" data-om-id="94eaad2d:383">
-              <li style="display:flex; gap: 12px;" data-om-id="94eaad2d:384"><span style="color: var(--vp-red-500); font-weight: 800;" data-om-id="94eaad2d:385">−</span>Limited on pages that block automated access</li>
-              <li style="display:flex; gap: 12px;" data-om-id="94eaad2d:386"><span style="color: var(--vp-red-500); font-weight: 800;" data-om-id="94eaad2d:387">−</span>Often runs on a daily cadence</li>
-              <li style="display:flex; gap: 12px;" data-om-id="94eaad2d:388"><span style="color: var(--vp-red-500); font-weight: 800;" data-om-id="94eaad2d:389">−</span>Frequent checks can get expensive</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Page monitoring agents col (highlighted) -->
-        <div class="card" style="padding: 40px; gap: 24px; background: #fff; border: 2px solid var(--vp-blue-500);" data-om-id="94eaad2d:390">
-          <div style="display:flex; justify-content: space-between; align-items: flex-start;" data-om-id="94eaad2d:391">
-            <div data-om-id="94eaad2d:392">
-              <div style="font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--vp-blue-700); font-weight: 700;" data-om-id="94eaad2d:393">Page monitoring agents</div>
-              <div style="font-size: 22px; color: var(--ink-3); margin-top: 8px;" data-om-id="94eaad2d:394">Visualping</div>
-            </div>
-            <img src="assets/visualping-mark.svg" alt="" style="width: 36px; height: 36px;" data-om-id="94eaad2d:395">
-          </div>
-          <div style="font-size: 28px; font-weight: 700; line-height: 1.3;" data-om-id="94eaad2d:396">Best when the exact page matters.</div>
-          <hr class="rule" data-om-id="94eaad2d:397">
-
-          <div data-om-id="94eaad2d:398">
-            <div style="font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--vp-green-700); font-weight: 700; margin-bottom: 14px;" data-om-id="94eaad2d:399">Pros</div>
-            <ul style="margin: 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 21px; color: var(--ink-2);" data-om-id="94eaad2d:400">
-              <li style="display:flex; gap: 12px;" data-om-id="94eaad2d:401"><span style="color: var(--vp-green-500); font-weight: 800;" data-om-id="94eaad2d:402">+</span>User picks the exact page to track</li>
-              <li style="display:flex; gap: 12px;" data-om-id="94eaad2d:403"><span style="color: var(--vp-green-500); font-weight: 800;" data-om-id="94eaad2d:404">+</span>Can run frequent checks when timing matters</li>
-              <li style="display:flex; gap: 12px;" data-om-id="94eaad2d:405"><span style="color: var(--vp-green-500); font-weight: 800;" data-om-id="94eaad2d:406">+</span>Shows precisely what changed on the page</li>
-            </ul>
-          </div>
-
-          <div data-om-id="94eaad2d:407">
-            <div style="font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--vp-red-700); font-weight: 700; margin-bottom: 14px;" data-om-id="94eaad2d:408">Cons</div>
-            <ul style="margin: 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 21px; color: var(--ink-2);" data-om-id="94eaad2d:409">
-              <li style="display:flex; gap: 12px;" data-om-id="94eaad2d:410"><span style="color: var(--vp-red-500); font-weight: 800;" data-om-id="94eaad2d:411">−</span>Needs the URL first</li>
-              <li style="display:flex; gap: 12px;" data-om-id="94eaad2d:412"><span style="color: var(--vp-red-500); font-weight: 800;" data-om-id="94eaad2d:413">−</span>Broad discovery needs a source list</li>
-              <li style="display:flex; gap: 12px;" data-om-id="94eaad2d:414"><span style="color: var(--vp-red-500); font-weight: 800;" data-om-id="94eaad2d:415">−</span>Less useful for ambient awareness</li>
-            </ul>
-          </div>
+<section data-deck-slide="7" data-label="08 Three Technologies">
+  <div class="slide">
+    <div class="s-header" style="margin-bottom: 36px;">
+      <div class="eyebrow">Three technologies, different jobs</div>
+      <h2 class="title" style="font-size: 56px;">
+        Search agents discover. Page monitors verify. <span style="color: var(--vp-blue-500);">Local agents watch from the device.</span>
+      </h2>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; flex: 1;">
+      <div class="card-flat" style="padding: 30px; gap: 18px; background: var(--vp-gray-100); border: none;">
+      <div style="display:flex; justify-content: space-between; align-items: flex-start;">
+        <div>
+          <div style="font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-4); font-weight: 700;">Search agents</div>
+          <div style="font-size: 20px; color: var(--ink-3); margin-top: 6px;">Google, ChatGPT, Claude</div>
         </div>
       </div>
-
-      <div class="slide-foot" data-om-id="94eaad2d:416">
-        <div class="mark" data-om-id="94eaad2d:417"><img src="assets/visualping-mark.svg" alt="" data-om-id="94eaad2d:418"><span data-om-id="94eaad2d:419">Visualping press materials</span></div>
-        <div data-om-id="94eaad2d:420">Re: Google I/O 2026 information agents · 07 / 13</div>
+      <div style="font-size: 25px; font-weight: 700; line-height: 1.25;">Best when the source list is unknown.</div>
+      <hr class="rule">
+      <div>
+        <div style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--vp-green-700); font-weight: 700; margin-bottom: 10px;">Pros</div>
+        <ul style="margin: 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 9px; font-size: 19px; color: var(--ink-2);"><li style="display:flex; gap: 10px;"><span style="color: var(--vp-green-500); font-weight: 800;">+</span>Finds sources you might miss</li><li style="display:flex; gap: 10px;"><span style="color: var(--vp-green-500); font-weight: 800;">+</span>Tracks a broad topic across many sources</li><li style="display:flex; gap: 10px;"><span style="color: var(--vp-green-500); font-weight: 800;">+</span>Starts from a question</li></ul>
+      </div>
+      <div>
+        <div style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--vp-red-700); font-weight: 700; margin-bottom: 10px;">Cons</div>
+        <ul style="margin: 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 9px; font-size: 19px; color: var(--ink-2);"><li style="display:flex; gap: 10px;"><span style="color: var(--vp-red-500); font-weight: 800;">&minus;</span>Limited on pages that block automated access</li><li style="display:flex; gap: 10px;"><span style="color: var(--vp-red-500); font-weight: 800;">&minus;</span>Often runs on a daily cadence</li><li style="display:flex; gap: 10px;"><span style="color: var(--vp-red-500); font-weight: 800;">&minus;</span>Frequent checks get expensive</li></ul>
       </div>
     </div>
-  </section>
+      <div class="card" style="padding: 30px; gap: 18px; background: #fff; border: 2px solid var(--vp-blue-500);">
+      <div style="display:flex; justify-content: space-between; align-items: flex-start;">
+        <div>
+          <div style="font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--vp-blue-700); font-weight: 700;">Page monitoring agents</div>
+          <div style="font-size: 20px; color: var(--ink-3); margin-top: 6px;">Visualping</div>
+        </div><img src="assets/visualping-mark.svg" alt="" style="width: 34px; height: 34px;">
+      </div>
+      <div style="font-size: 25px; font-weight: 700; line-height: 1.25;">Best when the exact page matters.</div>
+      <hr class="rule">
+      <div>
+        <div style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--vp-green-700); font-weight: 700; margin-bottom: 10px;">Pros</div>
+        <ul style="margin: 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 9px; font-size: 19px; color: var(--ink-2);"><li style="display:flex; gap: 10px;"><span style="color: var(--vp-green-500); font-weight: 800;">+</span>Checks run 24/7 in the cloud, even with the laptop closed</li><li style="display:flex; gap: 10px;"><span style="color: var(--vp-green-500); font-weight: 800;">+</span>Shows the exact diff as evidence</li><li style="display:flex; gap: 10px;"><span style="color: var(--vp-green-500); font-weight: 800;">+</span>Delivers to email, Slack, Teams, webhooks, API</li></ul>
+      </div>
+      <div>
+        <div style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--vp-red-700); font-weight: 700; margin-bottom: 10px;">Cons</div>
+        <ul style="margin: 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 9px; font-size: 19px; color: var(--ink-2);"><li style="display:flex; gap: 10px;"><span style="color: var(--vp-red-500); font-weight: 800;">&minus;</span>Needs the URL first</li><li style="display:flex; gap: 10px;"><span style="color: var(--vp-red-500); font-weight: 800;">&minus;</span>Broad discovery needs a source list</li></ul>
+      </div>
+    </div>
+      <div class="card-flat" style="padding: 30px; gap: 18px; background: var(--vp-gray-100); border: none;">
+      <div style="display:flex; justify-content: space-between; align-items: flex-start;">
+        <div>
+          <div style="font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-4); font-weight: 700;">Local page monitoring agents</div>
+          <div style="font-size: 20px; color: var(--ink-3); margin-top: 6px;">Safari Notify Me, Visualping extension</div>
+        </div>
+      </div>
+      <div style="font-size: 25px; font-weight: 700; line-height: 1.25;">Best for one page, one device, zero setup.</div>
+      <hr class="rule">
+      <div>
+        <div style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--vp-green-700); font-weight: 700; margin-bottom: 10px;">Pros</div>
+        <ul style="margin: 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 9px; font-size: 19px; color: var(--ink-2);"><li style="display:flex; gap: 10px;"><span style="color: var(--vp-green-500); font-weight: 800;">+</span>Built into the browser; nothing to sign up for</li><li style="display:flex; gap: 10px;"><span style="color: var(--vp-green-500); font-weight: 800;">+</span>Free and private; checks run on the device</li><li style="display:flex; gap: 10px;"><span style="color: var(--vp-green-500); font-weight: 800;">+</span>The fastest path from waiting to getting pinged</li></ul>
+      </div>
+      <div>
+        <div style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--vp-red-700); font-weight: 700; margin-bottom: 10px;">Cons</div>
+        <ul style="margin: 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 9px; font-size: 19px; color: var(--ink-2);"><li style="display:flex; gap: 10px;"><span style="color: var(--vp-red-500); font-weight: 800;">&minus;</span>Watches only while the device is awake</li><li style="display:flex; gap: 10px;"><span style="color: var(--vp-red-500); font-weight: 800;">&minus;</span>Alerts stay on that device</li><li style="display:flex; gap: 10px;"><span style="color: var(--vp-red-500); font-weight: 800;">&minus;</span>No team delivery, no API, lighter on-device AI</li></ul>
+      </div>
+    </div>
+    </div>
+    <div style="margin-top: 24px; font-size: 21px; color: var(--ink-2); line-height: 1.45;">
+      Most users will end up with two of the three. <strong>Visualping ships in both monitoring layers: cloud and local.</strong>
+    </div>
+    <div class="slide-foot"> <div class="mark"><img src="assets/visualping-mark.svg" alt=""><span>Visualping press materials</span></div> <div>Re: Google I/O + Apple WWDC 2026 · 08 / 15</div> </div>
+  </div>
+</section>
 
-  <!-- =========================================================
-       SLIDE 8 — How each architecture works
-  ========================================================== -->
-  <section data-label="08 How Each Works" data-om-id="94eaad2d:421" data-screen-label="08 08 How Each Works" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="7">
+<section data-deck-slide="8" data-label="09 How Each Works" data-om-id="94eaad2d:421" data-screen-label="08 08 How Each Works" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text">
     <div class="slide" data-om-id="94eaad2d:422">
       <div class="s-header" style="margin-bottom: 16px;" data-om-id="94eaad2d:423">
         <div class="eyebrow" data-om-id="94eaad2d:424">How each architecture works</div>
@@ -904,10 +914,7 @@
     </div>
   </section>
 
-  <!-- =========================================================
-       SLIDE 9 — Open-web agent: visual walkthrough
-  ========================================================== -->
-  <section data-label="14 A Real Category" data-om-id="94eaad2d:721" data-screen-label="14 14 A Real Category" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="12" data-deck-last-visible="" data-deck-active="">
+<section data-deck-slide="9" data-label="10 A Real Category" data-om-id="94eaad2d:721" data-screen-label="14 14 A Real Category" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-last-visible="" data-deck-active="">
     <div class="slide" data-om-id="94eaad2d:722">
       <div class="s-header" style="margin-bottom: 40px;" data-om-id="94eaad2d:723">
         <div class="eyebrow" data-om-id="94eaad2d:724">Why this category is becoming real</div>
@@ -945,8 +952,8 @@
           <div style="display: flex; gap: 28px; margin-bottom: 32px;" data-om-id="94eaad2d:740">
             <div class="num" style="font-size: 56px; min-width: 56px;" data-om-id="94eaad2d:741">1</div>
             <div data-om-id="94eaad2d:742">
-              <div style="font-size: 28px; font-weight: 700; margin-bottom: 10px; line-height: 1.2;" data-om-id="94eaad2d:743">Google just named it.</div>
-              <div style="font-size: 21px; color: var(--ink-3); line-height: 1.5;" data-om-id="94eaad2d:744">I/O 2026 gave the behavior a consumer name: “information agents.” That gives reporters a clean category to explain.</div>
+              <div style="font-size: 28px; font-weight: 700; margin-bottom: 10px; line-height: 1.2;" data-om-id="94eaad2d:743">Google named it. Apple shipped it 20 days later.</div>
+              <div style="font-size: 21px; color: var(--ink-3); line-height: 1.5;" data-om-id="94eaad2d:744">I/O gave the behavior a consumer name; WWDC built it into Safari. Reporters get a clean category and a clean trend line.</div>
             </div>
           </div>
 
@@ -970,13 +977,15 @@
 
       <div class="slide-foot" data-om-id="94eaad2d:755">
         <div class="mark" data-om-id="94eaad2d:756"><img src="assets/visualping-mark.svg" alt="" data-om-id="94eaad2d:757"><span data-om-id="94eaad2d:758">Visualping press materials</span></div>
-        <div data-om-id="94eaad2d:759">Re: Google I/O 2026 information agents · 13 / 13</div>
+        <div data-om-id="94eaad2d:759">Re: Google I/O + Apple WWDC 2026 · 10 / 15</div>
       </div>
     </div>
-  </section><section data-label="09 Open-Web Agent Demo" data-om-id="94eaad2d:567" data-screen-label="09 09 Open-Web Agent Demo" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="8">
+  </section>
+
+<section data-deck-slide="10" data-label="11 Search Agent Demo" data-om-id="94eaad2d:567" data-screen-label="09 09 Open-Web Agent Demo" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text">
     <div class="slide tint" data-om-id="94eaad2d:568">
       <div class="s-header" style="margin-bottom: 32px;" data-om-id="94eaad2d:569">
-        <div class="eyebrow" data-om-id="94eaad2d:570">Open-web agent · in practice</div>
+        <div class="eyebrow" data-om-id="94eaad2d:570">Search agent · in practice</div>
         <h2 class="title" data-om-id="94eaad2d:571">From a standing question to a notification on the lock screen.</h2>
       </div>
 
@@ -1008,10 +1017,7 @@
     </div>
   </section>
 
-  <!-- =========================================================
-       SLIDE 10 — Page monitoring agent: visual walkthrough
-  ========================================================== -->
-  <section data-label="10 Page Monitoring Agent Demo" data-om-id="94eaad2d:584" data-screen-label="10 10 Page Monitoring Agent Demo" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="9">
+<section data-deck-slide="11" data-label="12 Page Monitoring Agent Demo" data-om-id="94eaad2d:584" data-screen-label="10 10 Page Monitoring Agent Demo" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text">
     <div class="slide tint" data-om-id="94eaad2d:585">
       <div class="s-header" style="margin-bottom: 32px;" data-om-id="94eaad2d:586">
         <div class="eyebrow" data-om-id="94eaad2d:587">Page monitoring agent · in practice</div>
@@ -1046,10 +1052,36 @@
     </div>
   </section>
 
-  <!-- =========================================================
-       SLIDE 11 — Five framings
-  ========================================================== -->
-  <section data-label="11 Five Framings" data-om-id="94eaad2d:602" data-screen-label="11 11 Five Framings" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="10">
+<section data-deck-slide="12" data-label="13 Local Monitoring Demo">
+  <div class="slide tint">
+    <div class="s-header" style="margin-bottom: 32px;">
+      <div class="eyebrow">Local page monitoring &middot; in practice</div>
+      <h2 class="title">The browser watches the page itself.</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; flex: 1; align-items: stretch;">
+      <div style="display: flex; flex-direction: column;">
+        <div style="font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-4); font-weight: 700; margin-bottom: 18px;">1. Safari &middot; Notify Me, this fall</div>
+        <div style="flex: 1; background: #fff; border-radius: 16px; box-shadow: var(--shadow-3xl); padding: 22px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <img src="assets/apple-notify-me-macbook.png" alt="Safari Notify Me dialog on a MacBook" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;">
+        </div>
+        <div style="margin-top: 16px; font-size: 18px; color: var(--ink-3); line-height: 1.45;">
+          Name the change while you are on the page. Safari checks it and sends a push when it happens.
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div style="font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-4); font-weight: 700; margin-bottom: 18px;">2. Visualping extension &middot; in Chrome today</div>
+        <div style="flex: 1; background: #fff; border-radius: 16px; box-shadow: var(--shadow-3xl); padding: 22px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <img src="assets/vp-extension-local.png" alt="Visualping browser extension setting up a local monitor on a product page (preview UI)" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;">
+        </div>
+        <div style="margin-top: 16px; font-size: 18px; color: var(--ink-3); line-height: 1.45;">
+          Unlimited local monitors, free, with in-browser alerts. Same pattern, scoped to the device: pick the page, name the change, get pinged. <span style="color: var(--ink-4);">(Preview UI shown.)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-deck-slide="13" data-label="14 Five Framings" data-om-id="94eaad2d:602" data-screen-label="11 11 Five Framings" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text">
     <div class="slide" data-om-id="94eaad2d:603">
       <div class="s-header" style="margin-bottom: 36px;" data-om-id="94eaad2d:604">
         <div class="eyebrow" data-om-id="94eaad2d:605">Angles to pitch around this news</div>
@@ -1061,56 +1093,52 @@
         <div style="display: grid; grid-template-columns: 80px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid var(--rule);" data-om-id="94eaad2d:609">
           <div style="font-size: 44px; font-weight: 800; color: var(--vp-blue-500); line-height: 1; letter-spacing: -0.03em;" data-om-id="94eaad2d:610">01</div>
           <div data-om-id="94eaad2d:611">
-            <div style="font-size: 26px; font-weight: 700; margin-bottom: 8px;" data-om-id="94eaad2d:612">“The I/O announcement most recaps rushed past.”</div>
-            <div style="font-size: 20px; color: var(--ink-3); line-height: 1.5;" data-om-id="94eaad2d:613">Information agents got buried under AI Mode coverage. Tell the story most recaps skipped: what they are, why they matter, and why readers missed them.</div>
+            <div style="font-size: 26px; font-weight: 700; margin-bottom: 8px;" data-om-id="94eaad2d:612">“The announcement most recaps rushed past. Twice.”</div>
+            <div style="font-size: 20px; color: var(--ink-3); line-height: 1.5;" data-om-id="94eaad2d:613">Information agents got a paragraph at I/O. Notify Me got a sentence at WWDC. The category story is still unwritten.</div>
           </div>
         </div>
 
         <div style="display: grid; grid-template-columns: 80px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid var(--rule);" data-om-id="94eaad2d:614">
           <div style="font-size: 44px; font-weight: 800; color: var(--vp-blue-500); line-height: 1; letter-spacing: -0.03em;" data-om-id="94eaad2d:615">02</div>
           <div data-om-id="94eaad2d:616">
-            <div style="font-size: 26px; font-weight: 700; margin-bottom: 8px;" data-om-id="94eaad2d:617">“A category Google just named.”</div>
-            <div style="font-size: 20px; color: var(--ink-3); line-height: 1.5;" data-om-id="94eaad2d:618">Trace the lineage: Google Alerts (2003) → Visualping (2017) → ChatGPT Pulse (2025) → Exa $250M (May 2026) → Google rollout (Summer 2026).</div>
+            <div style="font-size: 26px; font-weight: 700; margin-bottom: 8px;" data-om-id="94eaad2d:617">“Named in May. Shipped in June.”</div>
+            <div style="font-size: 20px; color: var(--ink-3); line-height: 1.5;" data-om-id="94eaad2d:618">Trace the lineage: Google Alerts (2003) → Visualping (2017) → ChatGPT Pulse (2025) → Exa $250M (May 2026) → Google names it (May 19) → Apple ships it (June 8).</div>
           </div>
         </div>
 
         <div style="display: grid; grid-template-columns: 80px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid var(--rule);" data-om-id="94eaad2d:619">
           <div style="font-size: 44px; font-weight: 800; color: var(--vp-blue-500); line-height: 1; letter-spacing: -0.03em;" data-om-id="94eaad2d:620">03</div>
           <div data-om-id="94eaad2d:621">
-            <div style="font-size: 26px; font-weight: 700; margin-bottom: 8px;" data-om-id="94eaad2d:622">“You don’t have to wait for Google.”</div>
-            <div style="font-size: 20px; color: var(--ink-3); line-height: 1.5;" data-om-id="94eaad2d:623">Google’s agents arrive this summer for Pro/Ultra subscribers only. Several alternatives, including Visualping, are already free or low-cost and consumer-ready.</div>
+            <div style="font-size: 26px; font-weight: 700; margin-bottom: 8px;" data-om-id="94eaad2d:622">“You don’t have to wait for summer or fall.”</div>
+            <div style="font-size: 20px; color: var(--ink-3); line-height: 1.5;" data-om-id="94eaad2d:623">Google’s agents arrive this summer for Pro/Ultra subscribers; Apple’s Notify Me ships this fall. Several alternatives, including Visualping, are free or low-cost and consumer-ready today.</div>
           </div>
         </div>
 
         <div style="display: grid; grid-template-columns: 80px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid var(--rule);" data-om-id="94eaad2d:624">
           <div style="font-size: 44px; font-weight: 800; color: var(--vp-blue-500); line-height: 1; letter-spacing: -0.03em;" data-om-id="94eaad2d:625">04</div>
           <div data-om-id="94eaad2d:626">
-            <div style="font-size: 26px; font-weight: 700; margin-bottom: 8px;" data-om-id="94eaad2d:627">“Open-web agents vs. page monitoring agents.”</div>
-            <div style="font-size: 20px; color: var(--ink-3); line-height: 1.5;" data-om-id="94eaad2d:628">An explainer on two architectures: discovery (Google, Exa, ChatGPT Pulse, Perplexity) and precision (Visualping). Most readers will want both, but the distinction is still hard to see.</div>
+            <div style="font-size: 26px; font-weight: 700; margin-bottom: 8px;" data-om-id="94eaad2d:627">“Search agents vs. page monitoring vs. local.”</div>
+            <div style="font-size: 20px; color: var(--ink-3); line-height: 1.5;" data-om-id="94eaad2d:628">An explainer on three technologies: discovery (Google, ChatGPT, Claude), cloud page monitoring (Visualping), and local in-browser monitoring (Safari, Visualping). Most readers will want two of the three.</div>
           </div>
         </div>
 
         <div style="display: grid; grid-template-columns: 80px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);" data-om-id="94eaad2d:629">
           <div style="font-size: 44px; font-weight: 800; color: var(--vp-blue-500); line-height: 1; letter-spacing: -0.03em;" data-om-id="94eaad2d:630">05</div>
           <div data-om-id="94eaad2d:631">
-            <div style="font-size: 26px; font-weight: 700; margin-bottom: 8px;" data-om-id="94eaad2d:632">“A Vancouver SaaS built the consumer version in 2017.”</div>
-            <div style="font-size: 20px; color: var(--ink-3); line-height: 1.5;" data-om-id="94eaad2d:633">Visualping shipped the page monitoring agent version of what Google is now naming “information agents.” 16.8M monthly page checks. 1 in 5 changes flagged important. A small-company vs. Big Tech angle that holds up.</div>
+            <div style="font-size: 26px; font-weight: 700; margin-bottom: 8px;" data-om-id="94eaad2d:632">“A Vancouver SaaS built both monitoring layers first.”</div>
+            <div style="font-size: 20px; color: var(--ink-3); line-height: 1.5;" data-om-id="94eaad2d:633">Visualping shipped cloud page monitoring in 2017 and local in-browser monitoring years before Apple put it in Safari. 16.8M monthly page checks. 1 in 5 changes flagged important. A small-company vs. Big Tech angle that holds up.</div>
           </div>
         </div>
       </div>
 
       <div class="slide-foot" data-om-id="94eaad2d:634">
         <div class="mark" data-om-id="94eaad2d:635"><img src="assets/visualping-mark.svg" alt="" data-om-id="94eaad2d:636"><span data-om-id="94eaad2d:637">Visualping press materials</span></div>
-        <div data-om-id="94eaad2d:638">Re: Google I/O 2026 information agents · 11 / 13</div>
+        <div data-om-id="94eaad2d:638">Re: Google I/O + Apple WWDC 2026 · 14 / 15</div>
       </div>
     </div>
   </section>
 
-
-  <!-- =========================================================
-       SLIDE 13 — The pitch in one line (full-bleed dark)
-  ========================================================== -->
-  <section data-label="13 The Pitch" data-om-id="94eaad2d:705" data-screen-label="13 13 The Pitch" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="11">
+<section data-deck-slide="14" data-label="15 The Pitch" data-om-id="94eaad2d:705" data-screen-label="13 13 The Pitch" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text">
     <div class="slide deep" data-om-id="94eaad2d:706">
       <img src="assets/clouds-left.svg" class="cloud-bg" style="top:-60px; left:-60px; width:520px; opacity:.18; filter: brightness(0) invert(1);" alt="" data-om-id="94eaad2d:707">
       <img src="assets/clouds-right.svg" class="cloud-bg" style="bottom:-80px; right:-80px; width:620px; opacity:.18; filter: brightness(0) invert(1);" alt="" data-om-id="94eaad2d:708">
@@ -1127,14 +1155,14 @@
             “We are entering the era of Search Agents.”
           </blockquote>
           <div style="margin-top: 24px; font-size: 22px; color: rgba(255,255,255,.6);" data-om-id="94eaad2d:716">
-            Google I/O 2026 put light on a category most consumers had no name for. Until last week.
+            Google calls them information agents. Apple calls it Notify Me. One standing request: tell me when it changes. Two platforms named and shipped it in 20 days.
           </div>
         </div>
       </div>
 
       <div class="slide-foot" data-om-id="94eaad2d:717">
         <div class="mark" data-om-id="94eaad2d:718"><img src="assets/visualping-logo-white.svg" alt="" style="height: 22px; width:auto;" data-om-id="94eaad2d:719"></div>
-        <div data-om-id="94eaad2d:720">Re: Google I/O 2026 information agents · 12 / 13</div>
+        <div data-om-id="94eaad2d:720">Re: Google I/O + Apple WWDC 2026 · 15 / 15</div>
       </div>
     </div>
   </section>
