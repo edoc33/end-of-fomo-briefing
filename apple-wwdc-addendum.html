@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The End of FOMO &mdash; Apple WWDC Addendum</title>
+<link rel="stylesheet" href="design-tokens.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .b-row.b-row { display: flex; gap: 16px; align-items: flex-start; }
+  .b-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--vp-blue-500); margin-top: 12px; flex-shrink: 0; }
+  .b-txt { font-size: 26px; line-height: 1.45; color: var(--ink-2); }
+
+  .shot { border-radius: 16px; overflow: hidden; border: 1px solid var(--rule); box-shadow: 0 18px 44px rgba(12,34,53,.14); background: var(--vp-gray-200); }
+  .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .img-credit { font-size: 15px; color: var(--ink-4); margin-top: 12px; }
+
+  .callout { background: var(--vp-blue-50); border-left: 5px solid var(--vp-blue-500); border-radius: 0 12px 12px 0; padding: 28px 32px; }
+  .callout .tag { margin-bottom: 14px; }
+  .callout p { margin: 0; font-size: 23px; line-height: 1.45; color: var(--ink-2); }
+  .callout p strong { color: var(--ink); }
+
+  .fact { border: 1px solid var(--rule); border-radius: 12px; padding: 20px 24px; }
+  .fact .k { font-size: 15px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-4); margin-bottom: 8px; }
+  .fact .v { font-size: 24px; font-weight: 700; line-height: 1.25; }
+
+  .step-badge { width: 56px; height: 56px; border-radius: 50%; background: var(--vp-blue-500); color: #fff; font-size: 26px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .step h3 { font-size: 34px; font-weight: 700; margin: 26px 0 12px; }
+  .step p { font-size: 24px; line-height: 1.45; color: var(--ink-2); margin: 0; }
+
+  .tl { display: grid; grid-template-columns: repeat(6, 1fr); gap: 26px; position: relative; }
+  .tl::before { content: ""; position: absolute; left: 8px; right: 8px; top: 9px; height: 2px; background: var(--rule); }
+  .tl-node { position: relative; padding-top: 34px; }
+  .tl-node::before { content: ""; position: absolute; top: 0; left: 0; width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 4px solid var(--vp-gray-400); box-sizing: border-box; }
+  .tl-node.hot::before { background: var(--vp-blue-500); border-color: var(--vp-blue-500); }
+  .tl-node .d { font-size: 21px; font-weight: 800; letter-spacing: .02em; }
+  .tl-node .n { font-size: 22px; font-weight: 700; color: var(--vp-blue-700); margin-top: 6px; }
+  .tl-node .t { font-size: 18px; line-height: 1.4; color: var(--ink-3); margin-top: 8px; }
+
+  .src-card { text-decoration: none; color: inherit; }
+  .src-card .ov { font-size: 13px; color: var(--ink-4); letter-spacing: .08em; text-transform: uppercase; font-weight: 700; }
+  .src-card .h { font-size: 21px; font-weight: 700; line-height: 1.25; margin: 10px 0 8px; }
+  .src-card .u { font-family: var(--font-mono, ui-monospace); font-size: 13px; color: var(--ink-3); word-break: break-all; }
+  .src-card .open { display: flex; align-items: center; gap: 8px; color: var(--vp-blue-500); font-weight: 700; font-size: 14px; margin-top: 12px; }
+</style>
+<script type="application/json" id="speaker-notes">
+[
+ "Apple's WWDC keynote opened the Safari segment with this line: people keep tabs open because they're waiting for something. That is the FOMO behavior the May briefing documents. The data point: in a single-day snapshot this spring, 1.87 million monitors were active on Visualping. People already pay to stop checking. Apple just put the behavior on a keynote stage.",
+ "The announcement itself: Notify Me. You name the change you're waiting for, leave Safari, and get a push when it happens. Announced June 8, ships with iOS 27 and macOS 27 this fall, developer beta is live now. Scope at launch: one page per request, Safari on Apple devices. Open questions for the fall release: check frequency, change history, and what counts as a change worth a push.",
+ "The race: Apple gets the return path on iPhones and Macs this fall. Google's information agents arrive this summer for AI Pro and Ultra subscribers. The open web version has run for years: page monitoring agents that watch any page in any browser, with the exact diff as the receipt. Search answers once, the web keeps changing, and whoever owns the alert owns the return visit.",
+ "The pattern is the same everywhere: search, watch, notify. The user asks once, the agent keeps checking, the answer arrives when the page changes. Third proof in nine months: ChatGPT Pulse in September 2025, Google information agents in May, Safari Notify Me in June.",
+ "The lineage: Google Alerts in 2003, Visualping in 2017, ChatGPT Pulse in September 2025, Google names the category at I/O on May 19, Exa raises 250 million dollars the next day, and Apple ships Notify Me on June 8. The category went unnamed for 23 years, then got named and shipped inside 20 days.",
+ "Sources and contact. The MacRumors piece is the cleanest single writeup. The full End of FOMO briefing has the architecture explainer and the data. Three citable platform samples: 16.8 million page checks in April, 1 in 5 flagged important, 52,452 sub-five-minute monitors and 1.87 million active monitors in single-day snapshots. Serge Salager is available for interviews this week; contact eric.docouto@visualping.io."
+]
+</script>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080" style="--deck-rail-w: 188px;">
+
+<section data-label="A1 The Admission">
+  <div class="slide">
+    <div class="eyebrow" style="margin-bottom: 36px;">WWDC 2026&nbsp;&nbsp;|&nbsp;&nbsp;User behavior</div>
+    <div style="display: grid; grid-template-columns: 1fr 740px; gap: 64px; flex: 1; min-height: 0;">
+      <div style="display: flex; flex-direction: column;">
+        <div style="font-size: 130px; line-height: .7; color: var(--vp-blue-200); font-weight: 700; height: 62px;">&ldquo;</div>
+        <h1 class="title" style="font-size: 58px; max-width: 100%;">Sometimes we keep tabs open because we&rsquo;re <span style="color: var(--vp-blue-500);">waiting</span> for something.</h1>
+        <div style="font-size: 20px; color: var(--ink-4); margin-top: 18px;">Apple WWDC 2026 keynote &middot; June 8, 2026</div>
+        <p class="lead" style="font-size: 28px; margin-top: 34px;">Apple opened its Safari segment with the problem. Open tabs are watchlists.</p>
+        <div style="display: flex; flex-direction: column; gap: 18px; margin-top: 34px;">
+          <div class="b-row"><span class="b-dot"></span><span class="b-txt">The user has a specific trigger in mind: registration opens, a price drops, a slot frees up.</span></div>
+          <div class="b-row"><span class="b-dot"></span><span class="b-txt">The page is the source. The timing is uncertain.</span></div>
+          <div class="b-row"><span class="b-dot"></span><span class="b-txt">Until June 8, the OS treated that waiting as the user&rsquo;s job.</span></div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div class="shot" style="height: 440px;">
+          <img src="assets/apple-keynote-waiting.png" alt="Apple presenter on the WWDC 2026 keynote stage saying people keep tabs open while waiting for something">
+        </div>
+        <div class="img-credit">Image: Apple / WWDC 2026</div>
+        <div class="callout" style="margin-top: 28px;">
+          <span class="tag tag-blue">Data point</span>
+          <p><strong>People already pay to stop checking.</strong> In a single-day snapshot this spring, 1.87M monitors were active on Visualping. Apple just put the same behavior on the keynote stage.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="mark"><img src="assets/visualping-logo.svg" alt="Visualping"></div>
+      <div>Visualping press materials&nbsp;&nbsp;|&nbsp;&nbsp;Re: Apple WWDC 2026 Notify Me &middot; 01 / 06</div>
+    </div>
+  </div>
+</section>
+<section data-label="A2 The News">
+  <div class="slide">
+    <div class="s-header" style="margin-bottom: 44px;">
+      <div class="eyebrow">WWDC 2026&nbsp;&nbsp;|&nbsp;&nbsp;The announcement</div>
+      <h1 class="title">Apple builds <span style="color: var(--vp-blue-500);">page monitoring</span> into Safari.</h1>
+      <p class="lead">Notify Me lets a user name the change they are waiting for and leave Safari to watch the page.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 820px; gap: 64px; flex: 1; min-height: 0;">
+      <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          <div class="b-row"><span class="b-dot"></span><span class="b-txt">The prompt is concrete: &ldquo;when registration opens.&rdquo;</span></div>
+          <div class="b-row"><span class="b-dot"></span><span class="b-txt">Safari keeps checking after the user leaves. The alert arrives as a push.</span></div>
+          <div class="b-row"><span class="b-dot"></span><span class="b-txt">Scope at launch: one page per request, Safari on Apple devices.</span></div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-top: 40px;">
+          <div class="fact"><div class="k">Announced</div><div class="v">June 8, 2026</div></div>
+          <div class="fact"><div class="k">Ships in</div><div class="v">iOS 27 / macOS 27, public this fall</div></div>
+          <div class="fact"><div class="k">Developer beta</div><div class="v">Live now</div></div>
+        </div>
+        <div class="callout" style="margin-top: auto; border-left-color: var(--vp-orange-500); background: var(--vp-orange-100);">
+          <span class="tag tag-orange">Open questions for the fall release</span>
+          <p>Check frequency. Change history. What counts as a change worth a push. Writers covering the beta should ask all three.</p>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div class="shot" style="height: 492px;">
+          <img src="assets/apple-notify-me-dialog.png" alt="Safari Notify Me dialog on a summer camp page that says registration for August will open soon">
+        </div>
+        <div class="img-credit">Image: Apple via MacRumors</div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="mark"><img src="assets/visualping-logo.svg" alt="Visualping"></div>
+      <div>Visualping press materials&nbsp;&nbsp;|&nbsp;&nbsp;Re: Apple WWDC 2026 Notify Me &middot; 02 / 06</div>
+    </div>
+  </div>
+</section>
+<section data-label="A3 The Race">
+  <div class="slide">
+    <div class="s-header" style="margin-bottom: 44px;">
+      <div class="eyebrow">The return path&nbsp;&nbsp;|&nbsp;&nbsp;Contested ground</div>
+      <h1 class="title">The alert becomes <span style="color: var(--vp-blue-500);">the answer</span>.</h1>
+      <p class="lead">Safari comes back when the page changes. The return path is now platform territory.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: 980px 1fr; gap: 64px; flex: 1; min-height: 0;">
+      <div style="display: flex; flex-direction: column;">
+        <div class="shot" style="flex: 1; max-height: 530px;">
+          <img src="assets/apple-safari-alert.png" alt="macOS notification from Safari Notify Me reporting a page update next to an open MacBook">
+        </div>
+        <div class="img-credit">Image: Apple / WWDC 2026</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 22px;">
+        <div class="b-row"><span class="b-dot"></span><span class="b-txt">Apple gets the return path on iPhones and Macs this fall.</span></div>
+        <div class="b-row"><span class="b-dot"></span><span class="b-txt">Google&rsquo;s information agents arrive this summer, gated to AI Pro and Ultra subscribers.</span></div>
+        <div class="b-row"><span class="b-dot"></span><span class="b-txt">The open web version has run for years: page monitoring agents that watch any page in any browser, with the exact diff as the receipt.</span></div>
+        <div class="callout" style="margin-top: auto;">
+          <span class="tag tag-blue">Why it matters</span>
+          <p><strong>Search answers once. The web keeps changing.</strong> Whoever owns the alert owns the return visit.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="mark"><img src="assets/visualping-logo.svg" alt="Visualping"></div>
+      <div>Visualping press materials&nbsp;&nbsp;|&nbsp;&nbsp;Re: Apple WWDC 2026 Notify Me &middot; 03 / 06</div>
+    </div>
+  </div>
+</section>
+<section data-label="A4 The Pattern">
+  <div class="slide">
+    <div class="s-header" style="margin-bottom: 56px;">
+      <div class="eyebrow">End of FOMO&nbsp;&nbsp;|&nbsp;&nbsp;The pattern</div>
+      <h1 class="title">The query becomes <span style="color: var(--vp-blue-500);">a watchlist</span>.</h1>
+      <p class="lead">The user asks once. The agent keeps checking until the page changes.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 56px; align-items: start;">
+      <div class="step">
+        <div style="display: flex; align-items: center; gap: 18px;">
+          <div class="step-badge">1</div>
+          <div style="flex: 1; height: 2px; background: var(--rule);"></div>
+        </div>
+        <h3>Search</h3>
+        <p>The user asks for something that is not available yet.</p>
+      </div>
+      <div class="step">
+        <div style="display: flex; align-items: center; gap: 18px;">
+          <div class="step-badge">2</div>
+          <div style="flex: 1; height: 2px; background: var(--rule);"></div>
+        </div>
+        <h3>Watch</h3>
+        <p>The agent checks the page-level source.</p>
+      </div>
+      <div class="step">
+        <div style="display: flex; align-items: center; gap: 18px;">
+          <div class="step-badge">3</div>
+          <div style="flex: 1; height: 2px; background: var(--rule);"></div>
+        </div>
+        <h3>Notify</h3>
+        <p>The answer appears when the page changes.</p>
+      </div>
+    </div>
+    <div class="callout" style="margin-top: auto; margin-bottom: 30px;">
+      <span class="tag tag-blue">Third proof in nine months</span>
+      <p>ChatGPT Pulse (Sept 2025). Google information agents (May 2026). Safari Notify Me (June 2026). <strong>Same pattern, three platforms, nine months.</strong></p>
+    </div>
+    <div class="slide-foot">
+      <div class="mark"><img src="assets/visualping-logo.svg" alt="Visualping"></div>
+      <div>Visualping press materials&nbsp;&nbsp;|&nbsp;&nbsp;Re: Apple WWDC 2026 Notify Me &middot; 04 / 06</div>
+    </div>
+  </div>
+</section>
+<section data-label="A5 The Lineage">
+  <div class="slide">
+    <div class="s-header" style="margin-bottom: 70px;">
+      <div class="eyebrow">The lineage&nbsp;&nbsp;|&nbsp;&nbsp;23 years to a name</div>
+      <h1 class="title" style="max-width: 1620px;">Unnamed for 23 years. Named and shipped in <span style="color: var(--vp-blue-500); white-space: nowrap;">20 days</span>.</h1>
+    </div>
+    <div class="tl" style="margin: auto 0;">
+      <div class="tl-node">
+        <div class="d">2003</div>
+        <div class="n">Google Alerts</div>
+        <div class="t">Email when the index finds new content.</div>
+      </div>
+      <div class="tl-node">
+        <div class="d">2017</div>
+        <div class="n">Visualping</div>
+        <div class="t">Page-level monitoring with visual diffs.</div>
+      </div>
+      <div class="tl-node">
+        <div class="d">Sept 2025</div>
+        <div class="n">ChatGPT Pulse</div>
+        <div class="t">Proactive morning briefs in Pro.</div>
+      </div>
+      <div class="tl-node hot">
+        <div class="d">May 19, 2026</div>
+        <div class="n">Google names it</div>
+        <div class="t">&ldquo;Information agents&rdquo; announced at I/O.</div>
+      </div>
+      <div class="tl-node">
+        <div class="d">May 20, 2026</div>
+        <div class="n">Exa raises $250M</div>
+        <div class="t">At a $2.2B valuation, led by a16z.</div>
+      </div>
+      <div class="tl-node hot">
+        <div class="d">June 8, 2026</div>
+        <div class="n">Apple ships it</div>
+        <div class="t">Notify Me built into Safari.</div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top: auto; margin-bottom: 30px;">
+      <span class="tag tag-blue">The story</span>
+      <p><strong>Two platforms moved inside a month.</strong> The behavior is a decade old on the open web.</p>
+    </div>
+    <div class="slide-foot">
+      <div class="mark"><img src="assets/visualping-logo.svg" alt="Visualping"></div>
+      <div>Visualping press materials&nbsp;&nbsp;|&nbsp;&nbsp;Re: Apple WWDC 2026 Notify Me &middot; 05 / 06</div>
+    </div>
+  </div>
+</section>
+<section data-label="A6 Sources and Contact">
+  <div class="slide">
+    <div class="s-header" style="margin-bottom: 44px;">
+      <div class="eyebrow">Sources &amp; contact</div>
+      <h1 class="title">Primary sources, data, and <span style="color: var(--vp-blue-500);">a person to call</span>.</h1>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 800px; gap: 64px; flex: 1; min-height: 0;">
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <a class="card-flat src-card" style="padding: 24px; gap: 0;" href="https://www.apple.com/newsroom/">
+            <div class="ov">Apple Newsroom</div>
+            <div class="h">WWDC 2026 announcements</div>
+            <div class="u">apple.com/newsroom</div>
+            <div class="open">OPEN <span>&rarr;</span></div>
+          </a>
+          <a class="card-flat src-card" style="padding: 24px; gap: 0;" href="https://www.macrumors.com/2026/06/08/safari-monitor-webpage-notify-updates/">
+            <div class="ov">MacRumors &middot; June 8, 2026</div>
+            <div class="h">New Safari can monitor a webpage and notify you of updates</div>
+            <div class="u">macrumors.com/2026/06/08/safari-monitor-webpage-notify-updates</div>
+            <div class="open">OPEN <span>&rarr;</span></div>
+          </a>
+          <a class="card-flat src-card" style="padding: 24px; gap: 0;" href="https://www.apple.com/apple-events/">
+            <div class="ov">Keynote &middot; Safari segment</div>
+            <div class="h">Watch the Notify Me introduction</div>
+            <div class="u">apple.com/apple-events &middot; timestamp TK</div>
+            <div class="open">OPEN <span>&rarr;</span></div>
+          </a>
+          <a class="card-flat src-card" style="padding: 24px; gap: 0;" href="https://edoc33.github.io/end-of-fomo-briefing/">
+            <div class="ov">Full press briefing</div>
+            <div class="h">The End of FOMO: information agents, explained</div>
+            <div class="u">edoc33.github.io/end-of-fomo-briefing</div>
+            <div class="open">OPEN <span>&rarr;</span></div>
+          </a>
+        </div>
+        <div class="callout">
+          <span class="tag tag-blue">Embeddable art</span>
+          <p>Search &rarr; Watch &rarr; Notify diagram. Lineage timeline. Both available as PNG or SVG on request.</p>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div class="card-flat" style="gap: 16px;">
+          <span class="tag tag-blue" style="align-self: flex-start;">Data available to cite</span>
+          <div style="font-size: 22px; line-height: 1.5; color: var(--ink-2);">Visualping AI processed <strong style="color: var(--ink);">16.8M page checks</strong> in April 2026; the binary IMPORTANT classifier flagged <strong style="color: var(--ink);">1 in 5</strong> detected changes.</div>
+          <hr class="rule">
+          <div style="font-size: 22px; line-height: 1.5; color: var(--ink-2);"><strong style="color: var(--ink);">52,452 monitors</strong> ran at sub-five-minute intervals in a single-day snapshot.</div>
+          <hr class="rule">
+          <div style="font-size: 22px; line-height: 1.5; color: var(--ink-2);"><strong style="color: var(--ink);">1.87M monitors</strong> active in a single-day snapshot.</div>
+          <div style="font-size: 17px; color: var(--ink-4);">Each figure is a platform sample, framed for citation.</div>
+        </div>
+        <div class="card-flat" style="gap: 12px; margin-top: auto;">
+          <div style="font-size: 24px; font-weight: 700;">Serge Salager, CEO, Visualping</div>
+          <div style="font-size: 21px; line-height: 1.5; color: var(--ink-2);">&ldquo;Apple just told everyone with an iPhone that pages should watch themselves. We have run that service on the open web since 2017, on any page, in any browser, with the diff as evidence.&rdquo;</div>
+          <div style="font-size: 20px; color: var(--vp-blue-700); font-weight: 600;">eric.docouto@visualping.io</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="mark"><img src="assets/visualping-logo.svg" alt="Visualping"></div>
+      <div>Visualping press materials&nbsp;&nbsp;|&nbsp;&nbsp;Re: Apple WWDC 2026 Notify Me &middot; 06 / 06</div>
+    </div>
+  </div>
+</section>
+
+</deck-stage>
+
+<script src="deck-stage.js"></script>
+</body>
+</html>
