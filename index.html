@@ -36,7 +36,7 @@
  "Just to make the open-web flow concrete: a user asks a question, the agent runs across many sources, synthesizes the findings, and delivers a daily-cadence digest. The output is a brief — not a diff. You don't get to point at the exact change; you get a summary.",
  "And here's the page monitoring version. The user picks a specific URL. Visualping checks it according to the schedule the user sets (minutes, hours, or daily). When the page changes, you get an email (or a Slack message, or a Teams ping) showing exactly what changed, highlighted on the page. The point: precision, on a known page, on a fast cadence.",
  "And here's the local version in practice. Safari this fall: name the change while you're on the page, Safari checks it, you get a push. The Visualping extension in Chrome today: unlimited local monitors, free, with in-browser alerts. Same pattern as cloud page monitoring, scoped to the device. The difference from cloud: local watching stops when the device sleeps, and the alert stays on that device. That's why the two layers complement each other. And the Visualping extension is not local-only: the same panel creates cloud monitors that keep running with the laptop closed.",
- "Five angles, updated for Apple. One: the announcement most recaps rushed past, twice; information agents got a paragraph at I/O, Notify Me got a sentence at WWDC. Two: named in May, shipped in June; the full lineage runs from Google Alerts in 2003 through Apple on June 8. Three: you don't have to wait for Google's summer or Apple's fall. Four: the three-technologies explainer. Five: a Vancouver SaaS built both monitoring layers first.",
+ "Five angles, rebuilt for clickability and routed by desk. One, for Apple and browser writers: 5,181 monitors were already watching apple.com when Notify Me was announced; the demand predates the feature, and the first-party data is in the kit. Two, same desks plus consumer: Apple's demo checks once a day at 10 a.m., while in a single-day snapshot 52,452 Visualping monitors ran sub-five-minute checks; the scheduling gap is the story. Three, for search writers: Google's information agents are gated to AI Pro and Ultra at 20 to 200 dollars a month, and Safari's Notify Me is free in the default browser; whoever owns the alert owns the return visit. Four, for consumer and culture desks: March's most-monitored page was a French wine marathon, and the trends data plus interviewees are available. Five, the explainer: three kinds of agents, search, cloud page monitoring, and local; most people will need two, and the monitoring layers work today.",
  "The pitch in one line. Google calls them information agents. Apple calls it Notify Me. The behavior is one standing request: tell me when it changes. The category went unnamed for 23 years, then two platforms named and shipped it in 20 days. We've been calling it the end of FOMO. Thanks, and the full kit is yours."
 ]
 </script>
@@ -1084,50 +1084,50 @@
 
 <section data-deck-slide="13" data-label="14 Five Framings" data-om-id="94eaad2d:602" data-screen-label="11 11 Five Framings" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text">
     <div class="slide" data-om-id="94eaad2d:603">
-      <div class="s-header" style="margin-bottom: 36px;" data-om-id="94eaad2d:604">
+      <div class="s-header" style="margin-bottom: 24px;" data-om-id="94eaad2d:604">
         <div class="eyebrow" data-om-id="94eaad2d:605">Angles to pitch around this news</div>
         <h2 class="title" data-om-id="94eaad2d:606">Five angles. <span class="light" data-om-id="94eaad2d:607">Pick the one that fits your beat.</span></h2>
       </div>
 
-      <div style="display: flex; flex-direction: column; gap: 18px; flex: 1;" data-om-id="94eaad2d:608">
+      <div style="display: flex; flex-direction: column; gap: 12px; flex: 1;" data-om-id="94eaad2d:608">
 
-        <div style="display: grid; grid-template-columns: 80px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid var(--rule);" data-om-id="94eaad2d:609">
+        <div style="display: grid; grid-template-columns: 80px 1fr; gap: 28px; padding: 14px 0; border-top: 1px solid var(--rule);" data-om-id="94eaad2d:609">
           <div style="font-size: 44px; font-weight: 800; color: var(--vp-blue-500); line-height: 1; letter-spacing: -0.03em;" data-om-id="94eaad2d:610">01</div>
           <div data-om-id="94eaad2d:611">
-            <div style="font-size: 26px; font-weight: 700; margin-bottom: 8px;" data-om-id="94eaad2d:612">“The announcement most recaps rushed past. Twice.”</div>
-            <div style="font-size: 20px; color: var(--ink-3); line-height: 1.5;" data-om-id="94eaad2d:613">Information agents got a paragraph at I/O. Notify Me got a sentence at WWDC. The category story is still unwritten.</div>
+            <div style="font-size: 26px; font-weight: 700; margin-bottom: 8px;" data-om-id="94eaad2d:612">“5,181 monitors were watching apple.com before Notify Me existed.”</div>
+            <div style="font-size: 20px; color: var(--ink-3); line-height: 1.5;" data-om-id="94eaad2d:613">For Apple and browser desks. The demand predates the feature: a June 8 snapshot shows thousands of live monitors on apple.com, Pokémon Center, and Hermès. First-party data, on request.</div>
           </div>
         </div>
 
-        <div style="display: grid; grid-template-columns: 80px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid var(--rule);" data-om-id="94eaad2d:614">
+        <div style="display: grid; grid-template-columns: 80px 1fr; gap: 28px; padding: 14px 0; border-top: 1px solid var(--rule);" data-om-id="94eaad2d:614">
           <div style="font-size: 44px; font-weight: 800; color: var(--vp-blue-500); line-height: 1; letter-spacing: -0.03em;" data-om-id="94eaad2d:615">02</div>
           <div data-om-id="94eaad2d:616">
-            <div style="font-size: 26px; font-weight: 700; margin-bottom: 8px;" data-om-id="94eaad2d:617">“Named in May. Shipped in June.”</div>
-            <div style="font-size: 20px; color: var(--ink-3); line-height: 1.5;" data-om-id="94eaad2d:618">Trace the lineage: Google Alerts (2003) → Visualping (2017) → ChatGPT Pulse (2025) → Exa $250M (May 2026) → Google names it (May 19) → Apple ships it (June 8).</div>
+            <div style="font-size: 26px; font-weight: 700; margin-bottom: 8px;" data-om-id="94eaad2d:617">“Apple’s demo checks daily at 10 a.m. Restock windows close in minutes.”</div>
+            <div style="font-size: 20px; color: var(--ink-3); line-height: 1.5;" data-om-id="94eaad2d:618">For Apple, browser, and consumer desks. The keynote demo checks once a day. In a single-day snapshot, 52,452 Visualping monitors ran sub-five-minute checks. The scheduling gap is the story.</div>
           </div>
         </div>
 
-        <div style="display: grid; grid-template-columns: 80px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid var(--rule);" data-om-id="94eaad2d:619">
+        <div style="display: grid; grid-template-columns: 80px 1fr; gap: 28px; padding: 14px 0; border-top: 1px solid var(--rule);" data-om-id="94eaad2d:619">
           <div style="font-size: 44px; font-weight: 800; color: var(--vp-blue-500); line-height: 1; letter-spacing: -0.03em;" data-om-id="94eaad2d:620">03</div>
           <div data-om-id="94eaad2d:621">
-            <div style="font-size: 26px; font-weight: 700; margin-bottom: 8px;" data-om-id="94eaad2d:622">“You don’t have to wait for summer or fall.”</div>
-            <div style="font-size: 20px; color: var(--ink-3); line-height: 1.5;" data-om-id="94eaad2d:623">Google’s agents arrive this summer for Pro/Ultra subscribers; Apple’s Notify Me ships this fall. Several alternatives, including Visualping, are free or low-cost and consumer-ready today.</div>
+            <div style="font-size: 26px; font-weight: 700; margin-bottom: 8px;" data-om-id="94eaad2d:622">“Google’s version costs up to $200 a month. Safari’s is free.”</div>
+            <div style="font-size: 20px; color: var(--ink-3); line-height: 1.5;" data-om-id="94eaad2d:623">For search desks. Google named information agents on May 19, gated to AI Pro and Ultra. Twenty days later Apple built page monitoring into the default browser at no charge. Whoever owns the alert owns the return visit.</div>
           </div>
         </div>
 
-        <div style="display: grid; grid-template-columns: 80px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid var(--rule);" data-om-id="94eaad2d:624">
+        <div style="display: grid; grid-template-columns: 80px 1fr; gap: 28px; padding: 14px 0; border-top: 1px solid var(--rule);" data-om-id="94eaad2d:624">
           <div style="font-size: 44px; font-weight: 800; color: var(--vp-blue-500); line-height: 1; letter-spacing: -0.03em;" data-om-id="94eaad2d:625">04</div>
           <div data-om-id="94eaad2d:626">
-            <div style="font-size: 26px; font-weight: 700; margin-bottom: 8px;" data-om-id="94eaad2d:627">“Search agents vs. page monitoring vs. local.”</div>
-            <div style="font-size: 20px; color: var(--ink-3); line-height: 1.5;" data-om-id="94eaad2d:628">An explainer on three technologies: discovery (Google, ChatGPT, Claude), cloud page monitoring (Visualping), and local in-browser monitoring (Safari, Visualping). Most readers will want two of the three.</div>
+            <div style="font-size: 26px; font-weight: 700; margin-bottom: 8px;" data-om-id="94eaad2d:627">“The internet’s most-monitored page in March was a French wine marathon.”</div>
+            <div style="font-size: 20px; color: var(--ink-3); line-height: 1.5;" data-om-id="94eaad2d:628">For consumer tech and culture desks. Wine-marathon bibs, Pokémon restocks, Hermès bags, matcha: what people automate is what they care about. Monthly trends data and interviewees, available now.</div>
           </div>
         </div>
 
-        <div style="display: grid; grid-template-columns: 80px 1fr; gap: 28px; padding: 22px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);" data-om-id="94eaad2d:629">
+        <div style="display: grid; grid-template-columns: 80px 1fr; gap: 28px; padding: 14px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);" data-om-id="94eaad2d:629">
           <div style="font-size: 44px; font-weight: 800; color: var(--vp-blue-500); line-height: 1; letter-spacing: -0.03em;" data-om-id="94eaad2d:630">05</div>
           <div data-om-id="94eaad2d:631">
-            <div style="font-size: 26px; font-weight: 700; margin-bottom: 8px;" data-om-id="94eaad2d:632">“A Vancouver SaaS built both monitoring layers first.”</div>
-            <div style="font-size: 20px; color: var(--ink-3); line-height: 1.5;" data-om-id="94eaad2d:633">Visualping shipped cloud page monitoring in 2017 and local in-browser monitoring years before Apple put it in Safari. 16.8M monthly page checks. 1 in 5 changes flagged important. A small-company vs. Big Tech angle that holds up.</div>
+            <div style="font-size: 26px; font-weight: 700; margin-bottom: 8px;" data-om-id="94eaad2d:632">“Three kinds of agents now watch the web. Most people will need two.”</div>
+            <div style="font-size: 20px; color: var(--ink-3); line-height: 1.5;" data-om-id="94eaad2d:633">For the explainer everyone will write. Search agents discover (Google, ChatGPT, Claude). Cloud page monitors verify around the clock (Visualping). Local browser agents watch one page (Safari, Chrome extensions). The monitoring layers work today.</div>
           </div>
         </div>
       </div>
